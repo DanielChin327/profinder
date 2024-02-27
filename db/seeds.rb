@@ -1,6 +1,12 @@
 require 'open-uri'
 require 'nokogiri'
 
+user1 = User.create!(
+  username: "Daniel Chin",
+  email: "danchin327@gmail.com",
+  password: "123456"
+)
+
 8.times do
   user = User.create!(
   email: Faker::Internet.email,
@@ -43,9 +49,9 @@ catering_service = Service.create!(title: "Catering",
   )
 
 real_estae_service = Service.create!(title: "Real Estate",
-    price: "Free of Charge",
-    description: "Introducing your new home in Japan",
-    schedule: "Monday through Friday. 9am to 5pm.",
-    category: ["Apartment", "Housing"].sample,
-    user: User.all.sample
-    )
+  price: "Free of Charge",
+  description: "Introducing your new home in Japan",
+  schedule: "Monday through Friday. 9am to 5pm.",
+  category: ["Apartment", "Housing"].sample,
+  user: User.all.sample
+)

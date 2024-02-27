@@ -78,3 +78,4 @@ end
 
 gem 'faker'
 gem "cloudinary"
+gem 'htmlbeautifier'
