@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="card-container">
+  <%= link_to root_path, class: 'card-product-link' do %>
+    <div class="card-product">
+      <div class="vr-card"></div>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="ps-2"/>
+      <div class="card-product-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+     <% end %>
+</div>
+<%= link_to "home", root_path, class: 'button-regular'  %>
+<%= link_to "home large", root_path, class: 'button-large'  %>
