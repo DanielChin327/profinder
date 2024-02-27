@@ -1,10 +1,10 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmarks.all
+    @bookmarks = Bookmark.all
   end
 
   def create
-    @services = Service.find(params[:service_id])
+    @service = Service.find(params[:service_id])
     @bookmark = Bookmark.new(bookmark_param)
     @booking.user = current_user
     @booking.service = @service
@@ -25,6 +25,9 @@ class BookmarksController < ApplicationController
   end
 
   private
+  def bookmark_params
+    params.require(:bookmark)
+  end
 
 
 end
