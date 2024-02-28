@@ -1,7 +1,12 @@
 require 'open-uri'
 require 'nokogiri'
 
-User.create!(
+puts "Cleaning the DB..."
+Service.destroy_all
+User.destroy_all
+puts "Creating users..."
+
+user1 = User.create!(
   username: "Daniel Chin",
   email: "danchin327@gmail.com",
   password: "123456"
