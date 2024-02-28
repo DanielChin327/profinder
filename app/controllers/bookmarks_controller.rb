@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @service = Service.find(params[:service_id])
+    # @service = Service.find(params[:service_id]) #only for when you need it?
     @bookmark = Bookmark.new(bookmark_param)
     @booking.user = current_user
     @booking.service = @service

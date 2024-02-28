@@ -1,1 +1,9 @@
 <h1>Services Show Page</h1>
+
+
+
+<%= simple_form_for [@service, bookmark] do |f|  %>
+<%= f.input :commment %>
+<%= f.association :service %>
+<%= f.submit "Bookmark", class: 'btn btn-primary' %>
+<%end%>
