@@ -1,8 +1,21 @@
 <h1>Service Index Page</h1>
 
-<% @services.each do |service| %>
+
 <%="#{service.title}"%>
 <%="#{service.description}"%>
 <%="#{service.price}"%>
 <%="#{service.schedule}"%>
-<%end%>
+
+
+<div class="card-container">
+<% @services.each do |service| %>
+  <%= link_to root_path, class: 'card-product-link' do %>
+    <div class="card-product p-2">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+      <div class="card-product-infos">
+        <h2><%="#{service.title}"%></h2>
+        <p><%="#{service.description}"%></p>
+      </div>
+    </div>
+     <% end %>
+     <%end%>
