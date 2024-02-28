@@ -4,9 +4,10 @@ require 'nokogiri'
 puts "Cleaning the DB..."
 Service.destroy_all
 User.destroy_all
+Review.destroy_all
 puts "Creating users..."
 
-user1 = User.create!(
+User.create!(
   username: "Daniel Chin",
   email: "danchin327@gmail.com",
   password: "123456"
@@ -57,4 +58,22 @@ Service.create!(title: "Real Estate",
   schedule: "Monday through Friday. 9am to 5pm.",
   category: ["Apartment", "Housing"].sample,
   user: User.all.sample
+)
+
+Review.create!(rating: 4,
+comment: "The doctor speaks very good english and service is excellent as well.",
+eng_rating: 5,
+service: Service.all.sample
+)
+
+Review.create!(rating: 1,
+  comment: "The doctor speaks no english and service is terrible.",
+  eng_rating: 1,
+  service: Service.all.sample
+)
+
+Review.create!(rating: 4,
+  comment: "Thier services are fantastic. Staff can speak enough englisg to get the job done.",
+  eng_rating: 3,
+  service: Service.all.sample
 )
