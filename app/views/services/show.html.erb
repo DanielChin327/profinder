@@ -1,5 +1,9 @@
-<h1>Services Show Page</h1>
 
+<h1><%= @service.title%></h1>
+
+<%= @service.description%>
+<%= render "bookmarks/form" %>
 <%= render "review" %>
 <br>
 <%= render "reviews" %>
+

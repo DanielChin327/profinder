@@ -7,7 +7,7 @@ User.destroy_all
 Review.destroy_all
 puts "Creating users..."
 
-User.create!(
+user1 = User.create!(
   username: "Daniel Chin",
   email: "danchin327@gmail.com",
   password: "123456"
@@ -60,6 +60,13 @@ Service.create!(title: "Real Estate",
   user: User.all.sample
 )
 
+Service.all.first(2).each do |service|
+Bookmark.create!(
+  service: service,
+  user: user1
+)
+end
+
 Review.create!(rating: 4,
 comment: "The doctor speaks very good english and service is excellent as well.",
 eng_rating: 5,
@@ -77,3 +84,4 @@ Review.create!(rating: 4,
   eng_rating: 3,
   service: Service.all.sample
 )
+

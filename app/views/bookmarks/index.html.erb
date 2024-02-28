@@ -1,1 +1,7 @@
 <h1>bookmarks index</h1>
+<% @bookmarks.each do |bookmark|%>
+  <%= link_to bookmark.service.title, service_path(bookmark.service) %>
+<%end%>
+
+
+<%= link_to 'Go back to Services', services_path, class: 'btn btn-secondary' %>
