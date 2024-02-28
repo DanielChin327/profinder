@@ -1,8 +1,5 @@
 <h1>Service Index Page</h1>
 
-<% @services.each do |service| %>
-<%= link_to service.title, service_path(service), class: 'service-title' %>
-<%="#{service.description}"%>
-<%="#{service.price}"%>
-<%="#{service.schedule}"%>
-<%end%>
+
+<%= render "card" %>
+

@@ -1,0 +1,15 @@
+.carousel-width{
+  height: 300px;
+}
+
+.carousel-text-container{
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+}
