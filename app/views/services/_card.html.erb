@@ -1,0 +1,19 @@
+<div class="card-container">
+  <div class="card-shadow">
+    <% @services.each do |service| %>
+      <%= link_to service_path(service), class: 'card-product-link' do %>
+        <div class="card-product p-2">
+          <img class="card-product-image" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+          <div class="card-product-infos">
+            <h2><%="#{service.title}"%></h2>
+            <span><%="#{service.category}"%></span>
+            <p class="truncate"><%="#{service.description}"%></p>
+          </div>
+          <div class="card-image-price d-flex flex-column align-items-end">
+            <h3><%="¥#{service.price}"%></h3>
+            <%= image_tag "icon.png", class: "avatar", alt: "user profile" %>
+          </div>
+        </div>
+      <% end %>
+    <%end%>
+  </div>
