@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Review:</h2>
+  <%= simple_form_for [@service, @review] do |f| %>
+    <p>How was the service?</p>
+    <%= f.input :rating, collection: 1..5, as: :radio_buttons%>
+    <p>How was thier English skill?</p>
+    <%= f.input :eng_rating, collection: 1..5, as: :radio_buttons%>
+    <%= f.input :comment %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>

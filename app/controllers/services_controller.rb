@@ -20,7 +20,8 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
-    @review = Review.all
+    @review = Review.new
+    @reviews = Review.all
   end
 
   private
