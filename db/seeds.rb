@@ -58,3 +58,10 @@ Service.create!(title: "Real Estate",
   category: ["Apartment", "Housing"].sample,
   user: User.all.sample
 )
+
+Service.all.first(2).each do |service|
+Bookmark.create!(
+  service: service,
+  user: user1
+)
+end

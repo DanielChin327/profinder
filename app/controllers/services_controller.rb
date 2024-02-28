@@ -19,8 +19,9 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
     @service = Service.find(params[:id])
-    @review = Review.all
+    @reviews = Review.all
   end
 
   private
