@@ -8,6 +8,7 @@ class BookmarksController < ApplicationController
   def create
     # @service = Service.find(params[:service_id]) #don't need because it is put in Private method.
     @bookmark = Bookmark.new
+    @review = Review.new
     @bookmark.user = current_user
     @bookmark.service = @service
     if @bookmark.save
