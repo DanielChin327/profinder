@@ -1,1 +1,74 @@
 // Specific CSS for your home-page
+.carousel-width{
+  height: 400px;
+}
+
+.carousel-text-container{
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+}
+
+.home-button{
+  right: 0;
+  bottom: 0;
+  padding: 50px;
+}
+.home-container {
+  background-color: white;
+  padding: 1.75rem;
+  width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.home-container h2{
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: $purple;
+  padding-bottom: 1.75rem;
+}
+
+.home-container p{
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+}
+
+.container >h2{
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: $purple;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+.feature-box{
+  margin: 1.25rem;
+  padding: 1.25rem;
+  border: 2px solid $purple;
+  border-radius: 10px;
+}
+
+.feature-box h3{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+  color: $purple;
+  padding-bottom: 0.5rem;
+}
+
+.feature-box p{
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+}

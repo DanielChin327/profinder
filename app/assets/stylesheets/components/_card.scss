@@ -78,3 +78,15 @@
   height: 100px;
   object-fit: cover;
 }
+
+.info-box{
+  width: 920px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.grid-card{
+  padding: 5px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

@@ -19,6 +19,27 @@
 
 }
 
+.button-light{
+  display: inline-block;
+  border: 2px solid $purple;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: $purple;
+  line-height: 1.15;
+  font-size: 16px;
+  &:hover {
+      transition: all .1s ease;
+      box-shadow: 0 0 0 0 #000, 0 0 0 3px $dark-purple;
+      background-color: $dark-purple;
+      color: $white;
+  }
+
+}
+
 .button-large{
   display: inline-block;
   outline: none;

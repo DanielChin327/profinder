@@ -2,6 +2,10 @@ class ServicesController < ApplicationController
   # skip_before_action :authenticate_user!, only [:index, :show]
   def index
     @services = Service.all
+    if params[:query].present?
+      sql_subquery = "title ILIKE :query OR category ILIKE :query"
+      @services = @services.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def new
@@ -23,6 +27,7 @@ class ServicesController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @service = Service.find(params[:id])
+    @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
   end
 
   private
