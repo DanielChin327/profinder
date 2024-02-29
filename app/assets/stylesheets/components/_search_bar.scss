@@ -1,0 +1,12 @@
+.input-field{
+  background-color: $white;
+  border: 1px solid $purple;
+}
+.search-box {
+  // Adds a border around the search box
+  padding: 5px; // Adds some spacing inside the box // Light background color for the box
+  border-radius: 5px; // Optional: adds rounded corners to the box
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); // Optional: adds a subtle shadow to the box
+  margin-bottom: 10px; // Adds some space below the box
+
+}
