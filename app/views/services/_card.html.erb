@@ -11,7 +11,11 @@
           </div>
           <div class="card-image-price d-flex flex-column align-items-end">
             <h3><%="¥#{service.price}"%></h3>
-            <%= image_tag "icon.png", class: "avatar", alt: "user profile" %>
+            <% if service.user.photo.present?%>
+              <%= cl_image_tag service.user.photo.key, class:"avatar" %>
+            <% else %>
+              <%= image_tag "icon.png", class:"avatar" %>
+            <% end %>
           </div>
         </div>
       <% end %>

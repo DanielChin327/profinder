@@ -1,8 +1,26 @@
-
-<h1><%= @service.title%></h1>
-
-<%= @service.description%>
-<%= render "bookmarks/form" %>
-<%= render "services/review" %>
-<br>
+<div class="container text-center">
+<%= link_to 'Go Back', services_path, class: 'btn btn-secondary' %>
+  <div class="row gx-5">
+    <div class="col-8 grid-card p-3">
+      <img class="service-banner" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+      <div class="d-flex justify-content-between align-items-end">
+      <div class = "profile-pic avatar-large">
+        <%= cl_image_tag(@service.user.photo.key) %>
+      </div>
+      <%= simple_form_for [@service, @bookmark] do |f| %>
+        <%= f.submit 'Bookmark', class: 'btn btn-primary' %>
+      <% end %>
+      </div>
+      <h1><%= @service.title%></h1>
+      <%= @service.description%>
+    </div>
+    <div class="col-4 grid-card p-3">
+      <%= render "services/review" %>
+      <br>
+    </div>
+  </div>
+</div>
+<div class="grid-card">
 <%= render "services/reviews" %>
+</div>
+

@@ -1,5 +1,17 @@
 <h1>Service Index Page</h1>
-
-
-<%= render "card" %>
-
+<div class="d-flex justify-content-center search-box">
+  <div class="col-lg-8">
+    <%= form_with url: services_path, method: :get, class: "d-flex justify-content-center py-5" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control w-50 input-field",
+            placeholder: "Type a keyword"
+        %>
+      <div class="d-flex justify-content-between px-3 gap-3">
+        <%= submit_tag "Search", name: "", class: "button-regular" %>
+        <%= link_to "Show All", services_path, class: "button-light" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+  <%= render "card" %>
