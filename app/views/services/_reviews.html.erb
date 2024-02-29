@@ -1,8 +1,10 @@
 <div class="container">
-  <h2>Past reviews</h2>
-  <ul class="list-group">
-    <% @service.reviews.each do |review| %>
-      <li class="list-group-item"><%= review.comment%></li>
-    <% end %>
-  </ul>
+  <div class="past-reviews-container">
+    <h2>Past reviews</h2>
+    <ul class="list-group">
+      <% @service.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.comment%></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

@@ -1,11 +1,19 @@
 <div class="container">
-  <h2>Review:</h2>
-  <%= simple_form_for [@service, @review] do |f| %>
-    <p>How was the service?</p>
-    <%= f.input :rating, collection: 1..5, as: :radio_buttons%>
-    <p>How was thier English skill?</p>
-    <%= f.input :eng_rating, collection: 1..5, as: :radio_buttons%>
-    <%= f.input :comment %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
+  <div class="review-container">
+    <h2>Review:</h2>
+    <%= simple_form_for [@service, @review] do |f| %>
+      <p>How was the service?</p>
+      <div class="service-rating">
+        <%= f.input :rating, collection: 1..5, as: :radio_buttons, legend_tag: false %>
+      </div>
+      <p>How was thier English skill?</p>
+      <div class="eng-rating">
+        <%= f.input :eng_rating, collection: 1..5, as: :radio_buttons, legend_tag: false %>
+      </div>
+      <%= f.input :comment, required: false %>
+      <div class="sub-butt">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
