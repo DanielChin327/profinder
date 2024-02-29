@@ -20,12 +20,12 @@ user1 = User.create!(
   age = 'all'
   ethnicity = 'all'
 
-  # url = https://this-person-does-not-exist.com/new?gender=#{gender}&age=#{age}&etnic=#{ethnicity}'
-  # json = URI.open(url).string
-  # src = JSON.parse(json)['src']
-  # p photo_url = "https://this-person-does-not-exist.com#{src}"
-  # file = URI.open(photo_url)
-  # user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  url = "https://this-person-does-not-exist.com/new?gender=#{gender}&age=#{age}&etnic=#{ethnicity}"
+  json = URI.open(url).string
+  src = JSON.parse(json)['src']
+  p photo_url = "https://this-person-does-not-exist.com#{src}"
+  file = URI.open(photo_url)
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 end
 
 immigration_guidance = Service.create!(title: "Immigration Procedure Guidance",
