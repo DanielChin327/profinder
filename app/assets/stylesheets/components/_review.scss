@@ -1,0 +1,26 @@
+.review-container {
+  //display: flex;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  //height: 400px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+.service-rating .form-check {
+  display: inline-block;
+  flex-direction: row;
+  margin-right: 5px;
+}
+
+.eng-rating .form-check {
+  display: inline-block;
+  flex-direction: row;
+  margin-right: 5px;
+}
+
+.sub-butt .btn.btn-primary {
+  border-radius: 10px;
+  padding: 10px;
+}
