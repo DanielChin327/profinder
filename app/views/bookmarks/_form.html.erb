@@ -25,6 +25,10 @@
 
 
 <%= simple_form_for [@service, @bookmark] do |f| %>
-   <%= f.submit 'Bookmark', class: 'btn btn-primary' %>
+  <% if @is_bookmarked%>
+    <%= f.submit 'Bookmarked', class: 'btn btn-primary disabled', disabled: true %>
+  <% else %>
+    <%= f.submit 'Bookmark', class: 'btn btn-primary' %>
+  <% end %>
 <% end %>
 <%= link_to 'Go Back', services_path, class: 'btn btn-secondary' %>
