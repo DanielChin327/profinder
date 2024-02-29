@@ -12,7 +12,7 @@ class BookmarksController < ApplicationController
     @bookmark.user = current_user
     @bookmark.service = @service
     if @bookmark.save
-      redirect_to bookmarks_path
+      redirect_to service_path(@service)
     else
       render "services/show"
     end
@@ -25,6 +25,12 @@ class BookmarksController < ApplicationController
     else
       render "service/show"
     end
+  end
+
+  def destroy
+  @bookmarks = Bookmark.find(params[:id])
+  @bookmarks.destroy
+  redirect_to bookmarks_path
   end
 
   private

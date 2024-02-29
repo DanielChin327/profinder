@@ -27,6 +27,7 @@ class ServicesController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @service = Service.find(params[:id])
+    @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
   end
 
   private
