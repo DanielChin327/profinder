@@ -5,5 +5,4 @@ class Review < ApplicationRecord
   validates :comment, presence: true
   validates :comment, length: { minimum: 5, maximum: 200 }
   validates :eng_rating, presence: true
-
 end
