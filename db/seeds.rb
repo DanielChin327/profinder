@@ -690,19 +690,19 @@ digital_marketing_morgan_bailey.photo.attach(
   content_type: "image/avif"
 )
 
-graphic_design_chris_jones = Service.create!(
+graphic_design_christina_jones = Service.create!(
   title: "Graphic Design Services",
   price: "10000 per design",
   description: "Creative and impactful graphic design solutions for your branding, marketing materials, and digital presence. From logos to websites, bring your vision to life.",
   schedule: "Mon to Fri, 9 AM - 6 PM",
-  user: professional_chris_jones,
+  user: professional_christina_jones,
   category: "Branding, UI/UX Design, Print Materials, Digital Media"
 )
-graphic_design_chris_jones_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709224433/profinder/premium_photo-1661281347096-4a250151f422_uoc40q.avif"
-graphic_design_chris_jones_file = URI.open(graphic_design_chris_jones_url)
-graphic_design_chris_jones.photo.attach(
-  io: graphic_design_chris_jones_file,
-  filename: "graphic_design_chris_jones_image.avif",
+graphic_design_christina_jones_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709224433/profinder/premium_photo-1661281347096-4a250151f422_uoc40q.avif"
+graphic_design_christina_jones_file = URI.open(graphic_design_christina_jones_url)
+graphic_design_christina_jones.photo.attach(
+  io: graphic_design_christina_jones_file,
+  filename: "graphic_design_christina_jones_image.avif",
   content_type: "image/avif"
 )
 
