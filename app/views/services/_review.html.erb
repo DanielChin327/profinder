@@ -8,7 +8,8 @@
       </div>
       <p>How was thier English skill?</p>
       <div class="eng-rating">
-        <%= f.input :eng_rating, collection: 1..5, as: :radio_buttons, legend_tag: false %>
+        <%= f.input :eng_rating, collection: 1..5, as: :radio_buttons, legend_tag: false, error: "Rating can't be blank" %>
+        <%#= f.error_message_on :eng_rating, "Rating can't be blank" %>
       </div>
       <%= f.input :comment, required: false %>
       <div class="sub-butt">

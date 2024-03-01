@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to service_path(@service)
     else
-      render "services/show"
+      @bookmark = Bookmark.new
+      render "services/show", status: :unprocessable_entity
     end
   end
 
