@@ -1,5 +1,4 @@
 <h1 class="text-center">Your Bookmarked Services</h1>
-
 <div class="info-box">
   <div class="card-container">
     <% @bookmarks.each do |bookmark| %>
@@ -11,6 +10,11 @@
           <h2>
             <%= link_to(bookmark.service.title, service_path(bookmark.service), class: "truncate btn btn-link fs-4 text-decoration-none") %>
           </h2>
+        </div>
+        <div class="bookmark-reminder">
+          <p><%= bookmark.service.user.username %></p>
+          <p><%= bookmark.service.user.email %></p>
+          <p><%= bookmark.service.user.phonenumber %></p>
         </div>
         <div class="card-image-price">
           <p>¥ <%= bookmark.service.price %></p>
