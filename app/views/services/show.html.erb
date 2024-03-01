@@ -4,12 +4,17 @@
     <div class="col-8 grid-card p-3">
        <%= cl_image_tag(@service.photo.key, class: 'service-banner') %>
       <div class="d-flex justify-content-between align-items-end">
+      <div>
       <div class = "profile-pic avatar-large">
        <% if @service.user.photo.attached? %>
               <%= cl_image_tag @service.user.photo.key %>
             <% else %>
               <%= image_tag "icon.png"%>
             <% end %>
+      </div>
+         <div><i class="fa-solid fa-user"></i><%= @service.user.username%></div>
+         <div><i class="fa-regular fa-envelope"></i> <%= @service.user.email%></div>
+        <div><i class="fa-solid fa-phone"></i> <%= @service.user.phonenumber%></div>
       </div>
            <% if @is_bookmarked %>
           <button class='btn btn-primary' disabled>Bookmarked</button>
@@ -20,7 +25,9 @@
         <% end %>
       </div>
       <h1><%= @service.title%></h1>
-      <%= @service.description%>
+      <div><i class="fa-solid fa-yen-sign me-2"></i><%= @service.price%> </div>
+      <div> <i class="fa-solid fa-calendar-days me-2"></i> <%=@service.schedule%> </span></div>
+      <div><%= @service.description%> </div>
     </div>
     <div class="col-4 grid-card p-3">
       <%= render "services/review" %>

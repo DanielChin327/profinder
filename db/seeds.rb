@@ -546,7 +546,7 @@ cosmetic_dentistry_sam_smiles.photo.attach(
 
 emergency_dental_services_sam_smiles = Service.create!(
   title: "Emergency Dental Services",
-  price: "Variable based on treatment",
+  price: "Fee varies on treatment",
   description: "Immediate dental care when you need it most. Dr. Sam Smiles provides urgent treatment for dental emergencies, including pain relief, infections, and accidents.",
   schedule: "24/7 for emergencies",
   user: professional_sam_smiles,
@@ -884,7 +884,7 @@ comprehensive_health_screenings.photo.attach(
 
 rental_assistance_for_foreigners = Service.create!(
   title: "Rental Assistance for Foreigners",
-  price: "Variable",
+  price: "Free Consultation",
   description: "Comprehensive assistance finding and securing rental properties in Japan, tailored to the needs of foreigners. Includes property viewings, negotiation with landlords, and understanding rental agreements.",
   schedule: "By appointment",
   user: professional_mia_tanaka,
@@ -900,7 +900,7 @@ rental_assistance_for_foreigners.photo.attach(
 
 home_purchase_consultation = Service.create!(
   title: "Home Purchase Consultation",
-  price: "Variable",
+  price: "Free Consultation",
   description: "Expert guidance through the process of purchasing a home in Japan, from property search to closing. Services include market analysis, property inspections, negotiation, and legal paperwork.",
   schedule: "By appointment",
   user: professional_mia_tanaka,
