@@ -6,7 +6,7 @@
       <div class="service-rating">
         <%= f.input :rating, collection: 1..5, as: :radio_buttons, legend_tag: false %>
       </div>
-      <p>How was thier English skill?</p>
+      <p>How was their English skill?</p>
       <div class="eng-rating">
         <%= f.input :eng_rating, collection: 1..5, as: :radio_buttons, legend_tag: false, error: "Rating can't be blank" %>
         <%#= f.error_message_on :eng_rating, "Rating can't be blank" %>
