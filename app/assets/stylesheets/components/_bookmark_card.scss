@@ -1,0 +1,100 @@
+.bookmark-container {
+  width: 920px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.bookmark-shadow{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.bookmark-product {
+  border-left: 5px solid white;
+  padding: 5px;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+}
+
+.bookmark-product-text{
+  width: 50%;
+  overflow: hidden;
+}
+
+.bookmark-product h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  padding: 5px;
+}
+
+.bookmark-product h3{
+  font-size: 16px;
+  margin: 0;
+}
+.bookmark-product-text a{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bookmark-product p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+}
+
+.bookmark-product span {
+  font-size: 10px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.bookmark-product .bookmark-product-infos {
+  padding: 10px;
+
+}
+.bookmark-product-link{
+  text-decoration: none;
+  color: unset;
+  &:hover{
+    >.bookmark-product{
+      border-left: 5px solid $purple;
+      background-color: $light-gray;
+  }}
+}
+
+.vr-bookmark {
+  display: inline-block;
+    align-self: stretch;
+    width: 3px;
+    min-height: 1em;
+    background-color: currentcolor;
+    opacity: 0;
+}
+
+.truncate{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.bookmark-image-price{
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.bookmark-product-image{
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.bookmark-product-infos{
+  padding-left: 0.25rem;
+}
