@@ -5,7 +5,11 @@
        <%= cl_image_tag(@service.photo.key, class: 'service-banner') %>
       <div class="d-flex justify-content-between align-items-end">
       <div class = "profile-pic avatar-large">
-        <%= cl_image_tag(@service.photo.key) %>
+       <% if @service.user.photo.attached? %>
+              <%= cl_image_tag @service.user.photo.key %>
+            <% else %>
+              <%= image_tag "icon.png"%>
+            <% end %>
       </div>
            <% if @is_bookmarked %>
           <button class='btn btn-primary' disabled>Bookmarked</button>
