@@ -3,21 +3,23 @@
     <% @services.each do |service| %>
       <%= link_to service_path(service), class: 'card-product-link' do %>
         <div class="card-product p-2">
-          <img class="card-product-image" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+          <%= cl_image_tag(service.photo.key, class: 'card-product-image') %>
+
           <div class="card-product-infos">
-            <h2><%="#{service.title}"%></h2>
-            <span><%="#{service.category}"%></span>
-            <p class="truncate"><%="#{service.description}"%></p>
+            <h2><%= service.title %></h2>
+            <span><%= service.category %></span>
+            <p class="truncate"><%= service.description %></p>
           </div>
           <div class="card-image-price d-flex flex-column align-items-end">
-            <h3><%="¥#{service.price}"%></h3>
-            <% if service.user.photo.present?%>
-              <%= cl_image_tag service.user.photo.key, class:"avatar" %>
+            <h3>¥<%= service.price %></h3>
+            <% if service.user.photo.attached? %>
+              <%= cl_image_tag service.user.photo.key, class: "avatar" %>
             <% else %>
-              <%= image_tag "icon.png", class:"avatar" %>
+              <%= image_tag "icon.png", class: "avatar" %>
             <% end %>
           </div>
         </div>
       <% end %>
-    <%end%>
+    <% end %>
   </div>
+</div>
