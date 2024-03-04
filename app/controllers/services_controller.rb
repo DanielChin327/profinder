@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   # skip_before_action :authenticate_user!, only [:index, :show]
   def index
-    @services = Service.all
+    @services = Service.order(created_at: :desc).page(params[:page])
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR category ILIKE :query"
       @services = @services.where(sql_subquery, query: "%#{params[:query]}%")
@@ -28,8 +28,13 @@ class ServicesController < ApplicationController
     @reviews = Review.all
     @service = Service.find(params[:id])
     @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
-  end
 
+    @marker = [{
+      lat: @service.latitude,
+      lng: @service.longitude,
+      marker_html: render_to_string(partial: "map_marker", locals: {service: @service}) #@service?
+    }]
+  end
   private
 
   def service_params
