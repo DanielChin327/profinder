@@ -1,7 +1,12 @@
+//service index
 .card-container {
   width: 920px;
   margin-right: auto;
   margin-left: auto;
+}
+.card-container .card-scroll-box{
+  height: 625px;
+  overflow: scroll;
 }
 .card-shadow{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -56,7 +61,7 @@
   &:hover{
     >.card-product{
       border-left: 5px solid $purple;
-      background-color: $light-gray;
+      background-color: $light-aqua;
   }}
 }
 
@@ -92,9 +97,36 @@
   margin-right: auto;
   margin-left: auto;
 }
-.grid-card{
-  padding: 5px;
+
+//service card
+.detail-card{
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+.detail-card .text{
+  text-align: left;
+}
+
+.detail-card .info{
+  text-align: left;
+  padding-bottom: 0.25rem;
+}
+.user-card{
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.user-card .bio-title{
+  text-align: center;
+}
+.user-card .text{
+  text-align: left;
 }

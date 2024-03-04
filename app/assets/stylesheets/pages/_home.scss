@@ -52,11 +52,13 @@
   padding-bottom: 1.75rem;
 }
 .feature-box{
-  margin: 1.25rem;
-  padding: 1.25rem;
+  margin: 1rem;
+  padding: 1rem;
   border: 2px solid $purple;
   border-radius: 10px;
+  background-color: $light-gray;
 }
+
 
 .feature-box h3{
   font-size: 18px;
@@ -65,6 +67,8 @@
   text-align: left;
   color: $purple;
   padding-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .feature-box p{

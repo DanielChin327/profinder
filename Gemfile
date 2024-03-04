@@ -82,4 +82,8 @@ end
 gem 'faker'
 gem "cloudinary"
 gem 'htmlbeautifier'
+
 gem "geocoder"
+
+gem "kaminari"
+
