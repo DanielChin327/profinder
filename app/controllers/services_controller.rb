@@ -28,7 +28,7 @@ class ServicesController < ApplicationController
     @reviews = Review.all
     @service = Service.find(params[:id])
     @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
-
+    @average_rating = (@service.reviews.average(:rating) + @service.reviews.average(:eng_rating)) / 2
     @marker = [{
       lat: @service.latitude,
       lng: @service.longitude,
