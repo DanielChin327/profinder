@@ -96,22 +96,22 @@ p photo_url = "https://this-person-does-not-exist.com#{src}"
 file = URI.open(photo_url)
 professional_chris_justice.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-# professional_sam_smiles = User.create!(
-#   username: "SamSmiles",
-#   email: "samsmiles@example.com",
-#   password: "123456",
-#   phonenumber: "03-3226-0404",
-#   linkedin_profile: "https://www.linkedin.com/in/samsmiles",
-#   bio: "Experienced dentist focused on comprehensive care and patient comfort. Specializing in cosmetic dentistry.",
-#   contact_email: "sam@smilesdental.com",
-#   website_url: "https://samsmiles.dental"
-# )
-# url = "https://this-person-does-not-exist.com/new?gender=male&age=#{age}&etnic=#{ethnicity}"
-# json = URI.open(url).string
-# src = JSON.parse(json)['src']
-# p photo_url = "https://this-person-does-not-exist.com#{src}"
-# file = URI.open(photo_url)
-# professional_sam_smiles.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+professional_sam_smiles = User.create!(
+  username: "SamSmiles",
+  email: "samsmiles@example.com",
+  password: "123456",
+  phonenumber: "03-3226-0404",
+  linkedin_profile: "https://www.linkedin.com/in/samsmiles",
+  bio: "Experienced dentist focused on comprehensive care and patient comfort. Specializing in cosmetic dentistry.",
+  contact_email: "sam@smilesdental.com",
+  website_url: "https://samsmiles.dental"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=#{age}&etnic=#{ethnicity}"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+p photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_sam_smiles.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
 # professional_ava_shutter = User.create!(
 #   username: "AvaShutter",
@@ -497,37 +497,40 @@ meal_planning_nutrition_jamie_flavor.photo.attach(
 #   content_type: "image/avif"
 # )
 
-# immigration_documentation_assistance_chris_justice = Service.create!(
-#   title: "Immigration Documentation Assistance",
-#   price: "10000 per hour",
-#   description: "Expert assistance with immigration documentation, including visa applications, residency registration, and naturalization paperwork. Chris Justice helps simplify the complex immigration process, ensuring your documentation is accurate and submitted timely.",
-#   schedule: "Weekdays, 9 AM - 5 PM (Appointment needed)",
-#   user: professional_chris_justice,
-#   category: "Immigration Law, Visa Assistance, Residency Registration, Naturalization Support"
-# )
-# immigration_documentation_assistance_chris_justice_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709254287/profinder/photo-1654163600175-efc47ce20b29_wzmc1o.avif"
-# immigration_documentation_assistance_chris_justice_file = URI.open(immigration_documentation_assistance_chris_justice_url)
-# immigration_documentation_assistance_chris_justice.photo.attach(
-#   io: immigration_documentation_assistance_chris_justice_file,
-#   filename: "immigration_documentation_assistance_chris_justice_image.avif",
-#   content_type: "image/avif"
-# )
+immigration_documentation_assistance_chris_justice = Service.create!(
+  title: "Immigration Documentation Assistance",
+  price: "10000 per hour",
+  description: "Expert assistance with immigration documentation, including visa applications, residency registration, and naturalization paperwork. Chris Justice helps simplify the complex immigration process, ensuring your documentation is accurate and submitted timely.",
+  schedule: "Weekdays, 9 AM - 5 PM (Appointment needed)",
+  user: professional_chris_justice,
+  category: "Immigration Law, Visa Assistance, Residency Registration, Naturalization Support",
+  address: "2 Chome-10-1 Shibuya, Shibuya, Tokyo"
+)
+immigration_documentation_assistance_chris_justice_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709254287/profinder/photo-1654163600175-efc47ce20b29_wzmc1o.avif"
+immigration_documentation_assistance_chris_justice_file = URI.open(immigration_documentation_assistance_chris_justice_url)
+immigration_documentation_assistance_chris_justice.photo.attach(
+  io: immigration_documentation_assistance_chris_justice_file,
+  filename: "immigration_documentation_assistance_chris_justice_image.avif",
+  content_type: "image/avif"
+)
 
-# dental_services_sam_smiles = Service.create!(
-#   title: "Comprehensive Dental Care",
-#   price: "20000 per visit",
-#   description: "Experienced dentist focused on comprehensive care and patient comfort. Specializing in cosmetic dentistry.",
-#   schedule: "Mon to Fri, 8 AM - 3 PM",
-#   user: professional_sam_smiles,
-#   category: "Dentistry, Cosmetic Dentistry, Oral Health, Patient Care"
-# )
-# dental_services_sam_smiles_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709225911/profinder/premium_photo-1661277793925-9a74734a8fd9_fmjmep.avif"
-# dental_services_sam_smiles_file = URI.open(dental_services_sam_smiles_url)
-# dental_services_sam_smiles.photo.attach(
-#   io: dental_services_sam_smiles_file,
-#   filename: "dental_services_sam_smiles_image.avif",
-#   content_type: "image/avif"
-# )
+dental_services_sam_smiles = Service.create!(
+  title: "Comprehensive Dental Care",
+  price: "20000 per visit",
+  description: "Experienced dentist focused on comprehensive care and patient comfort. Specializing in cosmetic dentistry.",
+  schedule: "Mon to Fri, 8 AM - 3 PM",
+  user: professional_sam_smiles,
+  category: "Dentistry, Cosmetic Dentistry, Oral Health, Patient Care",
+  address: "5 Chome-6-1 Asakusa, Taito, Tokyo"
+
+)
+dental_services_sam_smiles_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709225911/profinder/premium_photo-1661277793925-9a74734a8fd9_fmjmep.avif"
+dental_services_sam_smiles_file = URI.open(dental_services_sam_smiles_url)
+dental_services_sam_smiles.photo.attach(
+  io: dental_services_sam_smiles_file,
+  filename: "dental_services_sam_smiles_image.avif",
+  content_type: "image/avif"
+)
 
 # cosmetic_dentistry_sam_smiles = Service.create!(
 #   title: "Cosmetic Dentistry",
