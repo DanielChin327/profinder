@@ -1,10 +1,19 @@
 class ServicesController < ApplicationController
-  # skip_before_action :authenticate_user!, only [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @services = Service.order(created_at: :desc).page(params[:page])
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR category ILIKE :query"
       @services = @services.where(sql_subquery, query: "%#{params[:query]}%")
+    end
+
+    @marker = @services.geocoded.map do |service|
+      {
+        lat: service.latitude,
+        lng: service.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {service: service}),
+        marker_html: render_to_string(partial: "map_marker", locals: {service: service})
+      }
     end
   end
 
@@ -27,15 +36,23 @@ class ServicesController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @service = Service.find(params[:id])
-    @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
+
+    if current_user #checks if user is logged in. Required to to be able see Service Show without logging in.
+      @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
+    else
+      @is_bookmarked = false
+    end
+
     @average_rating = (@service.reviews.average(:rating) + @service.reviews.average(:eng_rating)) / 2
+
     @marker = [{
       lat: @service.latitude,
       lng: @service.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {service: @service}),
       marker_html: render_to_string(partial: "map_marker", locals: {service: @service}) #@service?
     }]
   end
-  
+
   private
 
   def service_params
