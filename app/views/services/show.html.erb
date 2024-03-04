@@ -18,7 +18,7 @@
         <%# average_rating = 4.7 %>
         <% unless @average_rating.nil? %>
           <% fullstars = @average_rating.floor %>
-          <% need_half_star = (@average_rating % 1).round == 1 %>
+          <% need_half_star = ((@average_rating*2).round/2.0 % 1).round == 1 %>
           <%# display full stars %>
           <% fullstars.times do %>
             <i class="fa-solid fa-star"></i>
