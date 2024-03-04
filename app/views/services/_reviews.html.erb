@@ -6,6 +6,12 @@
         <li class="list-group-item">
           <div class="reviews"><%= "'#{review.comment}'- " %>
             <%= review.user.username %>
+            <% review.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+              <% (5 - review.rating).times do %>
+              <i class="fa-regular fa-star"></i>
+              <% end %>
           </div>
         </li>
       <% end %>
