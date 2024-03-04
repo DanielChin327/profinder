@@ -672,7 +672,7 @@ full_stack_dev_alex_taylor.photo.attach(
   content_type: "image/avif"
 )
 
-puts "Still making Service Seeds...."
+puts "Still Making Service Seeds...."
 
 digital_marketing_morgan_bailey = Service.create!(
   title: "Digital Marketing Solutions",
@@ -881,6 +881,7 @@ comprehensive_health_screenings.photo.attach(
   filename: "comprehensive_health_screenings_image.avif",
   content_type: "image/avif"
 )
+puts "Nearly Done With Service Seeds..."
 
 rental_assistance_for_foreigners = Service.create!(
   title: "Rental Assistance for Foreigners",
@@ -994,6 +995,152 @@ tax_optimization_filing_assistance.photo.attach(
   content_type: "image/avif"
 )
 
+puts "Creating Review Seeds..."
+
+
+review_jane_doe_photography_lessons = Review.create!(
+  rating: 5,
+  comment: "Ava's photography lessons were insightful and fun. She explained everything clearly in English(Native speaker), making it easy for me to follow along.",
+  eng_rating: 5,
+  user: user_jane_doe,
+  service: photography_lessons_ava_shutter
+)
+
+review_dan_chin_investment_planning = Review.create!(
+  rating: 5,
+  comment: "Hiroshi made the complex world of investment understandable for a beginner like me. His English is excellent, which really helped in breaking down the financial jargon.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: investment_planning_strategy
+)
+
+review_john_smith_schooling_consultation = Review.create!(
+  rating: 4,
+  comment: "Naomi provided invaluable advice on schooling options for my children. Her fluent English and deep understanding of the Japanese education system were exactly what we needed.",
+  eng_rating: 4,
+  user: user_john_smith,
+  service: schooling_options_consultation
+)
+
+review_emily_hart_catering_jamie_flavor = Review.create!(
+  rating: 5,
+  comment: "Jamie's catering service was exceptional. The fusion cuisine was a hit among my guests, and his ability to cater to dietary restrictions was impressive. His team's professionalism and clear communication in English made organizing the event seamless.",
+  eng_rating: 5,
+  user: professional_dr_emily_hart,
+  service: catering_jamie_flavor
+)
+
+review_hiroshi_takahashi_catering_jamie_flavor = Review.create!(
+  rating: 4,
+  comment: "Jamie's catering for our corporate retreat was fantastic. The variety and flavors of the dishes served were outstanding. While Jamie's English is good (He is Spanish), there were a few minor communication hiccups, but nothing that impacted the overall excellent service. Highly recommend!",
+  eng_rating: 4,
+  user: professional_hiroshi_takahashi,
+  service: catering_jamie_flavor
+)
+
+review_mia_tanaka_catering_jamie_flavor = Review.create!(
+  rating: 5,
+  comment: "Jamie's catering service was the highlight of our open house event. The diversity and quality of the dishes impressed everyone. Jamie, being a native speaker, effortlessly accommodated all our requests, ensuring a seamless experience. His professionalism and culinary skills truly stand out.",
+  eng_rating: 5,
+  user: professional_mia_tanaka,
+  service: catering_jamie_flavor
+)
+
+review_dan_chin_japanese_lessons = Review.create!(
+  rating: 5,
+  comment: "Akira's lessons have been incredibly helpful. His approach to teaching, combined with his patience and clear explanations, has significantly improved my Japanese. As a native speaker, Akira ensures there's no language barrier in learning.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: personalized_japanese_language_lessons
+)
+
+review_jane_doe_japanese_lessons = Review.create!(
+  rating: 5,
+  comment: "Taking lessons from Akira has been a game-changer for my Japanese proficiency. His teaching method is very effective, making complex concepts easy to understand. His fluency in English is a bonus, ensuring smooth communication.",
+  eng_rating: 5,
+  user: user_jane_doe,
+  service: personalized_japanese_language_lessons
+)
+
+review_john_smith_japanese_lessons = Review.create!(
+  rating: 4,
+  comment: "Akira's personalized Japanese lessons have been quite beneficial. He tailors the content to fit my learning pace, and his knowledge as a native speaker brings authenticity to the lessons. Highly recommend for anyone looking to learn Japanese.",
+  eng_rating: 4,
+  user: user_john_smith,
+  service: personalized_japanese_language_lessons
+)
+
+review_john_smith_rental_assistance = Review.create!(
+  rating: 5,
+  comment: "Efficient, friendly service that made apartment hunting much easier than expected. Mia is fantastic!",
+  eng_rating: 5,
+  user: user_john_smith,
+  service: rental_assistance_for_foreigners
+)
+
+review_jane_doe_rental_assistance = Review.create!(
+  rating: 4,
+  comment: "Mia was very helpful in guiding me through the rental process. Appreciated her patience and expertise.",
+  eng_rating: 4,
+  user: user_jane_doe,
+  service: rental_assistance_for_foreigners
+)
+
+review_dan_chin_rental_assistance = Review.create!(
+  rating: 5,
+  comment: "The rental assistance service was a lifesaver. Found a great place in a tough market. Couldn't have done it without Mia's help.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: rental_assistance_for_foreigners
+)
+
+review_dan_chin_dental_services = Review.create!(
+  rating: 5,
+  comment: "Great experience with Dr. Sam. Professional, friendly, and the clinic is very welcoming.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: dental_services_sam_smiles
+)
+
+review_jane_doe_dental_services = Review.create!(
+  rating: 5,
+  comment: "Dr. Sam Smiles provided excellent dental care with a very gentle approach. My teeth have never felt better!",
+  eng_rating: 5,
+  user: user_jane_doe,
+  service: dental_services_sam_smiles
+)
+
+review_john_smith_immigration_assistance_second = Review.create!(
+  rating: 5,
+  comment: "Second time using Chris's services for residency paperwork. As efficient and helpful as before.",
+  eng_rating: 5,
+  user: user_john_smith,
+  service: immigration_documentation_assistance_chris_justice
+)
+
+review_jane_doe_immigration_assistance = Review.create!(
+  rating: 4,
+  comment: "Chris was very knowledgeable and patient throughout the visa process. Highly recommend his services.",
+  eng_rating: 4,
+  user: user_jane_doe,
+  service: immigration_documentation_assistance_chris_justice
+)
+
+review_dan_chin_immigration_assistance = Review.create!(
+  rating: 5,
+  comment: "Fantastic help from Chris on navigating the immigration documentation. His attention to detail is top-notch.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: immigration_documentation_assistance_chris_justice
+)
+
+review_john_smith_immigration_assistance = Review.create!(
+  rating: 5,
+  comment: "Chris's assistance with my visa application was superb. Made the entire process smooth and stress-free.",
+  eng_rating: 5,
+  user: user_john_smith,
+  service: immigration_documentation_assistance_chris_justice
+)
 
 # user1 = User.create!(
 #   username: "Daniel Chin",
