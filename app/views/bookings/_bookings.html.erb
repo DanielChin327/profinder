@@ -1,0 +1,30 @@
+<h2>Upcoming & Pending</h2>
+<div class="card-booking-container">
+  <% if @upcoming_bookings.present?%>
+    <% @upcoming_bookings.each do |booking| %>
+      <%= render 'bookings/booking', booking: booking %>
+    <% end %>
+  <% else %>
+    <p class="booking-status">No upcoming bookings yet</p>
+  <% end %>
+</div>
+<h2>Past</h2>
+<div class="card-booking-container">
+  <% if @past_bookings.present?%>
+    <% @past_bookings.each do |booking| %>
+      <%= render 'bookings/booking', booking: booking %>
+    <% end %>
+  <% else %>
+    <p class="booking-status">No past bookings yet</p>
+  <% end %>
+</div>
+<h2>Denied</h2>
+<div class="card-booking-container">
+  <% if @denied_bookings.present?%>
+    <% @denied_bookings.each do |booking| %>
+      <%= render 'bookings/booking', booking: booking %>
+    <% end %>
+  <% else %>
+    <p class="booking-status">No denied bookings yet</p>
+  <% end %>
+</div>

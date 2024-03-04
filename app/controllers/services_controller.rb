@@ -39,7 +39,6 @@ class ServicesController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @service = Service.find(params[:id])
-
     if current_user #checks if user is logged in. Required to to be able see Service Show without logging in.
       @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
     else
@@ -49,7 +48,6 @@ class ServicesController < ApplicationController
     average_rating = @service.reviews.average(:rating) || 0
     eng_rating = @service.reviews.average(:eng_rating) || 0
     average_rating = (average_rating + eng_rating) / 2
-
     @marker = [{
       lat: @service.latitude,
       lng: @service.longitude,

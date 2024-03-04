@@ -1,0 +1,14 @@
+<div class="service-form">
+  <%= simple_form_for([@service, @booking], html: { class: 'mt-3' }) do |f| %>
+<%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+    <div class="d-flex justify-content-between px-5">
+      <%= link_to "Cancel", services_path, class: 'btn btn-secondary text-decoration-none' %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

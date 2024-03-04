@@ -13,8 +13,14 @@ Rails.application.routes.draw do
   resources :services do
     resources :bookmarks, only: :create
     resources :reviews, only: [:create, :new]
+    resources :bookings, only: [:create]
   end
   resources :reviews, only: [:destroy, :update]
   resources :bookmarks, only: [:index, :destroy]
 
+  namespace :professional do
+    resources :bookings, only: :index
+    # equivalent to => get 'daimyo/bookings', to: 'daimyo/bookings#index'
+  end
+  resources :bookings, only: [:update, :index]
 end
