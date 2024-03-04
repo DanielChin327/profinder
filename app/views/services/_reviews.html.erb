@@ -7,10 +7,10 @@
           <div class="reviews"><%= "'#{review.comment}'- " %>
             <%= review.user.username %>
             <p><% review.rating.times do %>
-                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star" style="color :orange"></i>
               <% end %>
               <% (5 - review.rating).times do %>
-                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star" style="color :orange"></i>
             <% end %></p>
           </div>
         </li>
