@@ -1,14 +1,32 @@
-.mapboxgl-popup {
-  max-width: 100px;
+
+.mapbox-card{
+position: relative
+}
+
+.map-box-card-link{
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+width: 100%;
+z-index: 1
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  padding: 0 !important;
+  border-radius: 20px !important;
+  overflow: hidden
 }
 
 .mapboxgl-popup-image {
-  max-width: 50%;
   height: auto;
   object-fit: cover;
+}
+
+.mapboxgl-popup-close-button {
+  transform: scale(3);
+  top: 8px !important;
+  right: 8px !important
 }

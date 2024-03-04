@@ -1,7 +1,10 @@
-<div class="mapboxgl-popup">
 
-  <%= cl_image_tag(service.photo.key, class: "mapboxgl-popup-image") %>
- <div class="mapboxgl-popup-content col-5 p-2">
+<div class="mapbox-card">
+  <% unless service.id == params[:id].to_i%>
+  <%= link_to "",  service_path(service), class: "map-box-card-link"%>
+  <%end%>
+  <%= cl_image_tag(service.photo.key, class: "mapboxgl-popup-image w-100") %>
+ <div class="mapboxgl-popup-content">
    <p><%= service.title %></p>
    <p><%= service.price %></p>
    <p><%= service.schedule %></p>

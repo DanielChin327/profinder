@@ -42,11 +42,13 @@ class ServicesController < ApplicationController
     else
       @is_bookmarked = false
     end
+
     @average_rating = (@service.reviews.average(:rating) + @service.reviews.average(:eng_rating)) / 2
 
     @marker = [{
       lat: @service.latitude,
       lng: @service.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {service: @service}),
       marker_html: render_to_string(partial: "map_marker", locals: {service: @service}) #@service?
     }]
   end
