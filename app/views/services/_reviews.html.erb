@@ -1,12 +1,22 @@
-<div class="past-reviews-container">
-  <h2>Past reviews</h2>
-  <ul class="list-group">
-    <% @service.reviews.each do |review| %>
-      <li class="list-group-item">
-        <div class="reviews"><%= "'#{review.comment}'- " %>
-          <%= review.user.username %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+
+<div class="container">
+  <div class="past-reviews-container">
+    <h2>Past reviews</h2>
+    <ul class="list-group">
+      <% @service.reviews.each do |review| %>
+        <li class="list-group-item">
+          <div class="reviews"><%= "'#{review.comment}'- " %>
+            <%= review.user.username %>
+            <% review.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+              <% (5 - review.rating).times do %>
+              <i class="fa-regular fa-star"></i>
+              <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>

@@ -12,6 +12,8 @@ class Service < ApplicationRecord
 
 
   # validates :category, presence: true
+
   paginates_per 10
+
 
 end
