@@ -35,6 +35,7 @@ class ServicesController < ApplicationController
       marker_html: render_to_string(partial: "map_marker", locals: {service: @service}) #@service?
     }]
   end
+  
   private
 
   def service_params
