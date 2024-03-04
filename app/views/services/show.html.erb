@@ -21,18 +21,18 @@
           <% need_half_star = ((@average_rating*2).round/2.0 % 1).round == 1 %>
           <%# display full stars %>
           <% fullstars.times do %>
-            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star" style="color :orange"></i>
           <% end %>
           <%# display half star if needed %>
           <% if need_half_star %>
-            <i class="fa-solid fa-star-half-stroke"></i>
+            <i class="fa-solid fa-star-half-stroke" style="color :orange"></i>
             <% (4 - fullstars).times do %>
-              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star" style="color :orange"></i>
             <% end %>
           <% else %>
             <%# if no half star %>
             <% (5 - fullstars).times do %>
-              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star" style="color :orange"></i>
             <% end %>
           <% end %>
         <% end %>
