@@ -6,5 +6,7 @@ class Service < ApplicationRecord
   has_one_attached :photo
   validates :title, presence: true
   validates :price, presence: true
-  # validates :category, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+
 end

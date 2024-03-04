@@ -28,8 +28,13 @@ class ServicesController < ApplicationController
     @reviews = Review.all
     @service = Service.find(params[:id])
     @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
-  end
 
+    @marker = [{
+      lat: @service.latitude,
+      lng: @service.longitude,
+      marker_html: render_to_string(partial: "map_marker", locals: {service: @service}) #@service?
+    }]
+  end
   private
 
   def service_params
