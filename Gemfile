@@ -87,3 +87,4 @@ gem "geocoder"
 
 gem "kaminari"
 
+gem "noticed", "~> 2.1"
