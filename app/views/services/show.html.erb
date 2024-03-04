@@ -14,6 +14,28 @@
           <% end %>
         </div>
         <h1><%= @service.title%></h1>
+        <p>Average Rating: <%= @average_rating.nil? ? 'No reviews yet' : number_with_precision(@average_rating, precision: 1) %> stars</p>
+        <%# average_rating = 4.7 %>
+        <% unless @average_rating.nil? %>
+          <% fullstars = @average_rating.floor %>
+          <% need_half_star = (@average_rating % 1).round == 1 %>
+          <%# display full stars %>
+          <% fullstars.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+          <%# display half star if needed %>
+          <% if need_half_star %>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <% (4 - fullstars).times do %>
+              <i class="fa-regular fa-star"></i>
+            <% end %>
+          <% else %>
+            <%# if no half star %>
+            <% (5 - fullstars).times do %>
+              <i class="fa-regular fa-star"></i>
+            <% end %>
+          <% end %>
+        <% end %>
         <div class="info"><i class="fa-solid fa-yen-sign me-2"></i><%= @service.price%> </div>
         <div class="info"> <i class="fa-solid fa-calendar-days me-2"></i> <%=@service.schedule%> </span></div>
       <div class="text"><%= @service.description%> </div>
@@ -50,5 +72,5 @@
   </div>
 </div>
 <div class="map-box">
-<%= render "services/map", marker: @marker %>
+  <%= render "services/map", marker: @marker %>
 </div>
