@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="past-reviews-container">
     <h2>Past reviews</h2>
@@ -7,16 +6,15 @@
         <li class="list-group-item">
           <div class="reviews"><%= "'#{review.comment}'- " %>
             <%= review.user.username %>
-            <% review.rating.times do %>
-              <i class="fa-solid fa-star"></i>
-            <% end %>
-              <% (5 - review.rating).times do %>
-              <i class="fa-regular fa-star"></i>
+            <p><% review.rating.times do %>
+                <i class="fa-solid fa-star" style="color :orange"></i>
               <% end %>
+              <% (5 - review.rating).times do %>
+                <i class="fa-regular fa-star" style="color :orange"></i>
+            <% end %></p>
           </div>
         </li>
       <% end %>
     </ul>
   </div>
-
 </div>
