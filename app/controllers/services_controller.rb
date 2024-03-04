@@ -8,11 +8,14 @@ class ServicesController < ApplicationController
     end
 
     @marker = @services.geocoded.map do |service|
+      average_rating = service.reviews.average(:rating) || 0
+      eng_rating = service.reviews.average(:eng_rating) || 0
+      average_rating = (average_rating + eng_rating) / 2
       {
         lat: service.latitude,
         lng: service.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {service: service}),
-        marker_html: render_to_string(partial: "map_marker", locals: {service: service})
+        info_window_html: render_to_string(partial: "info_window", locals: {service: service, average_rating: average_rating}),
+        marker_html: render_to_string(partial: "map_marker", locals: {service: service}),
       }
     end
   end
@@ -43,12 +46,14 @@ class ServicesController < ApplicationController
       @is_bookmarked = false
     end
 
-    @average_rating = (@service.reviews.average(:rating) + @service.reviews.average(:eng_rating)) / 2
+    average_rating = @service.reviews.average(:rating) || 0
+    eng_rating = @service.reviews.average(:eng_rating) || 0
+    average_rating = (average_rating + eng_rating) / 2
 
     @marker = [{
       lat: @service.latitude,
       lng: @service.longitude,
-      info_window_html: render_to_string(partial: "info_window", locals: {service: @service}),
+      info_window_html: render_to_string(partial: "info_window", locals: {service: @service, average_rating: average_rating}),
       marker_html: render_to_string(partial: "map_marker", locals: {service: @service}) #@service?
     }]
   end
