@@ -7,4 +7,5 @@ class Service < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
   # validates :category, presence: true
+  paginates_per 10
 end

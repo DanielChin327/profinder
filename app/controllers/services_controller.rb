@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   # skip_before_action :authenticate_user!, only [:index, :show]
   def index
-    @services = Service.all
+    @services = Service.order(created_at: :desc).page(params[:page])
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR category ILIKE :query"
       @services = @services.where(sql_subquery, query: "%#{params[:query]}%")

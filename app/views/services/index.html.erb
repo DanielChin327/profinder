@@ -1,7 +1,6 @@
-<h1>Service Index Page</h1>
 <div class="d-flex justify-content-center search-box">
   <div class="col-lg-8">
-    <%= form_with url: services_path, method: :get, class: "d-flex justify-content-center py-5" do %>
+    <%= form_with url: services_path, method: :get, class: "d-flex justify-content-center py-2" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control w-50 input-field",
