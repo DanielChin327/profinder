@@ -1,22 +1,22 @@
 <p><%= name %>  <%= rating.nil? || rating.zero?  ? 'No reviews yet' : "#{number_with_precision(rating, precision: 1)} stars" %></p>
-        <%# average_rating = 4.7 %>
-        <% unless rating.nil? || rating.zero? %>
-          <% fullstars = rating.floor %>
-          <% need_half_star = ((rating*2).round/2.0 % 1).round == 1 %>
-          <%# display full stars %>
-          <% fullstars.times do %>
-            <i class="fa-solid fa-star fa-2xs" style="color :orange"></i>
-          <% end %>
-          <%# display half star if needed %>
-          <% if need_half_star %>
-            <i class="fa-solid fa-star-half-stroke fa-2xs" style="color :orange"></i>
-            <% (4 - fullstars).times do %>
-              <i class="fa-regular fa-star" style="color :orange"></i>
-            <% end %>
-          <% else %>
-            <%# if no half star %>
-            <% (5 - fullstars).times do %>
-              <i class="fa-regular fa-star fa-2xs" style="color :orange"></i>
-            <% end %>
-          <% end %>
- <% end %>
+<%# average_rating = 4.7 %>
+<% unless rating.nil? || rating.zero? %>
+  <% fullstars = rating.floor %>
+  <% need_half_star = ((rating*2).round/2.0 % 1).round == 1 %>
+  <%# display full stars %>
+  <% fullstars.times do %>
+    <i class="fa-solid fa-star fa-2xs" style="color :orange"></i>
+  <% end %>
+  <%# display half star if needed %>
+  <% if need_half_star %>
+    <i class="fa-solid fa-star-half-stroke fa-2xs" style="color :orange"></i>
+    <% (4 - fullstars).times do %>
+      <i class="fa-regular fa-star" style="color :orange"></i>
+    <% end %>
+  <% else %>
+    <%# if no half star %>
+    <% (5 - fullstars).times do %>
+      <i class="fa-regular fa-star fa-2xs" style="color :orange"></i>
+    <% end %>
+  <% end %>
+<% end %>
