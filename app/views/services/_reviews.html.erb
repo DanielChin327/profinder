@@ -6,12 +6,10 @@
         <li class="list-group-item">
           <div class="reviews"><%= "'#{review.comment}'- " %>
             <%= review.user.username %>
-            <p><% review.rating.times do %>
-                <i class="fa-solid fa-star" style="color :orange"></i>
-              <% end %>
-              <% (5 - review.rating).times do %>
-                <i class="fa-regular fa-star" style="color :orange"></i>
-            <% end %></p>
+            <div class="star_rating">
+              <p><%= render "shared/star_icon_rating", rating: @service_rating,  name: "Service: " %></p>
+              <p><%= render "shared/star_icon_rating", rating: @eng_rating, name: "English: "%></p>
+            </div>
           </div>
         </li>
       <% end %>
