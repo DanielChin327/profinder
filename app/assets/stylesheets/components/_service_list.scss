@@ -1,0 +1,10 @@
+.service-index-info{
+  display: flex; /* This enables Flexbox layout */
+  align-items: start; /* This aligns items at the start of the flex container */
+  justify-content: space-between; /* This spaces out the flex items */
+  gap: 20px; /* Optional: adds some space between your flex items */
+}
+
+.service-list{
+  flex:3;
+}
