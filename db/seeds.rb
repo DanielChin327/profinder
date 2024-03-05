@@ -807,7 +807,7 @@ tax_return_assistance_lee_numbers.photo.attach(
 
 full_stack_dev_alex_taylor = Service.create!(
   title: "Full-stack Development",
-  price: "60000 per week",
+  price: "50000 per ",
   description: "End-to-end web development services from database to front-end, leveraging the latest technologies for robust and scalable applications.",
   schedule: "Mon to Fri, 10 AM - 7 PM",
   user: professional_alex_taylor,
@@ -1310,6 +1310,153 @@ review_john_smith_immigration_assistance = Review.create!(
   user: user_john_smith,
   service: immigration_documentation_assistance_chris_justice
 )
+
+review_dan_chin_business_japanese = Review.create!(
+  rating: 5,
+  comment: "Akira's insights into business Japanese and etiquette have been invaluable for my career in Tokyo. His lessons are practical and tailored to real-world scenarios.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: business_japanese_and_cultural_etiquette
+)
+
+# Reviews for pitch / demo.
+
+review_jane_doe_business_japanese = Review.create!(
+  rating: 4,
+  comment: "The course on business Japanese by Akira has significantly improved my communication skills with clients and colleagues. Highly recommend for professionals.",
+  eng_rating: 4,
+  user: user_jane_doe,
+  service: business_japanese_and_cultural_etiquette
+)
+
+review_john_smith_business_japanese = Review.create!(
+  rating: 5,
+  comment: "Mastering business Japanese was a challenge until I met Akira. His teaching style is engaging and effective, making complex etiquette rules easy to grasp.",
+  eng_rating: 5,
+  user: user_john_smith,
+  service: business_japanese_and_cultural_etiquette
+)
+
+review_mia_tanaka_business_japanese = Review.create!(
+  rating: 5,
+  comment: "Participating in Akira's business Japanese course has been a game changer for my interactions in the Japanese market. His lessons are a must for expats.",
+  eng_rating: 4,
+  user: professional_mia_tanaka,
+  service: business_japanese_and_cultural_etiquette
+)
+
+review_lee_jordan_business_japanese = Review.create!(
+  rating: 5,
+  comment: "Akira's program on business Japanese etiquette has vastly improved my professional interactions. His proficiency in English and Japanese made learning seamless.",
+  eng_rating: 5,
+  user: professional_lee_jordan,
+  service: business_japanese_and_cultural_etiquette
+)
+
+review_emily_hart_business_japanese = Review.create!(
+  rating: 4,
+  comment: "Akira's expertise in business Japanese is unparalleled. His course is well-structured, providing practical skills and cultural understanding vital for success.",
+  eng_rating: 4,
+  user: professional_dr_emily_hart,
+  service: business_japanese_and_cultural_etiquette
+)
+
+review_jane_doe_ui_ux_design = Review.create!(
+  rating: 5,
+  comment: "Alex's UI/UX design transformed our website. His approach to user experience is both innovative and practical, resulting in a site that's not only beautiful but user-friendly.",
+  eng_rating: 5,
+  user: user_jane_doe,
+  service: ui_ux_design_alex_morgan
+)
+
+review_dan_chin_ui_ux_design = Review.create!(
+  rating: 5,
+  comment: "Working with Alex on our app's design was a game-changer. His insights into UX helped us improve user retention significantly. Highly recommend his services.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: ui_ux_design_alex_morgan
+)
+
+review_john_smith_ui_ux_design = Review.create!(
+  rating: 4,
+  comment: "Alex's expertise in UI/UX design is evident in the work he delivered. The project was on time and exceeded our expectations in terms of both aesthetics and functionality.",
+  eng_rating: 5,
+  user: user_john_smith,
+  service: ui_ux_design_alex_morgan
+)
+
+review_naomi_kato_ui_ux_design = Review.create!(
+  rating: 4,
+  comment: "Alex's approach to UI/UX design is innovative and tailored. His work on our project site greatly enhanced its functionality and aesthetic appeal.",
+  eng_rating: 4,
+  user: professional_naomi_kato,
+  service: ui_ux_design_alex_morgan
+)
+
+review_jordan_flex_full_stack_dev = Review.create!(
+  rating: 5,
+  comment: "Alex's development work exceeded our expectations. His innovative solutions have greatly improved our platform's performance.",
+  eng_rating: 5,
+  user: professional_jordan_flex,
+  service: full_stack_dev_alex_taylor
+)
+
+review_emily_hart_full_stack_dev = Review.create!(
+  rating: 5,
+  comment: "Impressive work by Alex on our healthcare platform. His full-stack expertise is evident in the smooth operation and user-friendly design.",
+  eng_rating: 5,
+  user: professional_dr_emily_hart,
+  service: full_stack_dev_alex_taylor
+)
+
+review_taylor_green_full_stack_dev = Review.create!(
+  rating: 5,
+  comment: "Alex's approach to problem-solving in development is unparalleled. Our cybersecurity app's backend is now robust thanks to him.",
+  eng_rating: 5,
+  user: professional_taylor_green,
+  service: full_stack_dev_alex_taylor
+)
+
+review_jordan_casey_full_stack_dev = Review.create!(
+  rating: 5,
+  comment: "Working with Alex on our mobile app development was a great experience. His expertise in full-stack development is exceptional.",
+  eng_rating: 5,
+  user: professional_jordan_casey,
+  service: full_stack_dev_alex_taylor
+)
+
+review_casey_lee_full_stack_dev = Review.create!(
+  rating: 4,
+  comment: "Alex played a critical role in the development of our startup's platform. His technical knowledge and project management skills are outstanding.",
+  eng_rating: 4,
+  user: professional_casey_lee,
+  service: full_stack_dev_alex_taylor
+)
+
+review_lee_jordan_full_stack_dev = Review.create!(
+  rating: 4,
+  comment: "Our IT project benefited greatly from Alex's full-stack development skills. He's a skilled developer who can tackle any challenge.",
+  eng_rating: 4,
+  user: professional_lee_jordan,
+  service: full_stack_dev_alex_taylor
+)
+
+review_kim_parker_full_stack_dev = Review.create!(
+  rating: 5,
+  comment: "Alex's dedication to our project was remarkable. His full-stack development skills brought our vision to life with efficiency and creativity.",
+  eng_rating: 5,
+  user: professional_kim_parker,
+  service: full_stack_dev_alex_taylor
+)
+
+
+
+
+
+
+
+
+
 
 
 
