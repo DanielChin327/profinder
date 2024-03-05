@@ -15,6 +15,10 @@
     <% end %>
   </div>
 </div>
-<%= render "card" %>
 
-<%= render "services/map", marker: @marker %>
+<div class="service-index-info">
+  <div class="service-list">
+    <%= render "card" %>
+</div>
+      <%= render "services/map", marker: @marker %>
+</div>
