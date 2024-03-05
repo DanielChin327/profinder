@@ -6,7 +6,7 @@
   <%= cl_image_tag(service.photo.key, class: "mapboxgl-popup-image w-100") %>
  <div class="mapboxgl-popup-content">
    <p><b><%= service.title %></b></p>
-<div><%= render "shared/star_icon_rating", rating: average_rating%></div>
+<div><%= render "shared/star_icon_rating", rating: average_rating, name: "Service"%></div>
    <div><%= "¥ #{service.price}" %></div>
    <div><p><%= service.schedule %></p></div>
  </div>

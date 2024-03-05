@@ -12,6 +12,8 @@
               <% end %>
               <p class="truncate"><%= service.description %></p>
             </div>
+            <% service_rating = service.reviews.average(:rating) || 0 %>
+            <p><%= render "shared/star_icon_rating", rating: service_rating, name: "" %></p>
             <div class="card-image-price d-flex flex-column align-items-end">
               <h3>¥<%= service.price %></h3>
               <% if service.user.photo.attached? %>
@@ -25,7 +27,7 @@
       <% end %>
     </div>
   </div>
-    <div style="font-size: 2rem;">
-      <%= paginate @services %>
-    </div>
+  <div style="font-size: 2rem;">
+    <%= paginate @services %>
+  </div>
 </div>
