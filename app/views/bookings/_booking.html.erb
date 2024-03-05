@@ -1,9 +1,9 @@
-<div class="card-product">
+<div class="booking-product">
   <%= cl_image_tag(booking.service.photo.key) %>
-  <div class="card-product-infos booking-card-width">
+  <div class="booking-product-infos booking-card-width">
     <h3><%="#{booking.service.title}"%></h3>
-    <h4> <%#= "Period: #{booking.num_of_days} days" %></h4>
-    <h4><i class="fa-regular fa-calendar"></i> <%= booking.start_date %> - <%= booking.end_date %> (<%= booking.num_of_days %> days)</h4>
+    <p> <%#= "Period: #{booking.num_of_days} days" %></p>
+    <p><i class="fa-regular fa-calendar"></i> <%= booking.start_date %> - <%= booking.end_date %> (<%= booking.num_of_days %> days)</p>
     <p><%= booking.service.description %></p>
   </div>
   <%= render "bookings/status", booking: booking %>

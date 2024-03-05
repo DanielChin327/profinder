@@ -20,7 +20,7 @@ $darkGrey: #4f585e;
 //   text-rendering: optimizeLegibility;
 // }
 
-a.btn {
+a.top-card-button {
   background: $teal;
   border-radius: 4px;
 	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
@@ -32,15 +32,15 @@ a.btn {
 	transition: all 0.1s 0s ease-out;
 }
 
-.no-touch a.btn:hover {
+.no-touch a.top-card-button:hover {
   background: lighten($teal,2.5);
   box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
   transform: translateY(-2px);
   transition: all 0.25s 0s ease-out;
 }
 
-.no-touch a.btn:active,
-a.btn:active {
+.no-touch a.top-card-button:active,
+a.top-card-button:active {
   background: darken($teal,2.5);
   box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
   transform: translate3d(0,1px,0);
