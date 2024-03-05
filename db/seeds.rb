@@ -3,7 +3,7 @@ require 'nokogiri'
 
 puts "Cleaning the DB..."
 Service.destroy_all
-@.destroy_all
+User.destroy_all
 Review.destroy_all
 puts "Creating users..."
 
@@ -72,6 +72,41 @@ file = URI.open(photo_url)
 user_john_smith.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
 # PROFESSIONAL USER ACCOUNTS...
+
+professional_kazuo_tanaka = User.create!(
+  username: "KazuoTanaka",
+  email: "kazuotanaka@example.com",
+  password: "123456",
+  phonenumber: "03-3227-8901",
+  linkedin_profile: "https://www.linkedin.com/in/kazuotanaka",
+  bio: "Experienced and reliable plumber with over 15 years of experience in residential and commercial plumbing. Specializing in installations, repairs, and maintenance.",
+  contact_email: "kazuo@plumbingsolutions.com",
+  website_url: "https://kazuotanakaplumbing.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=40&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+p photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_kazuo_tanaka.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
+professional_haruto_nagasaki = User.create!(
+  username: "HarutoNagasaki",
+  email: "harutonagasaki@example.com",
+  password: "123456",
+  phonenumber: "03-3229-5678",
+  linkedin_profile: "https://www.linkedin.com/in/harutonagasaki",
+  bio: "Certified car technician with a passion for automotive repair and maintenance. Expert in diagnostics, engine repair, and performance enhancements.",
+  contact_email: "haruto@cartechzone.com",
+  website_url: "https://harutonagasaki.cartech.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=35&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+p photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_haruto_nagasaki.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
 professional_jamie_flavor = User.create!(
   username: "JamieFlavor",
   email: "jamieflavor@example.com",
@@ -431,6 +466,93 @@ professional_hiroshi_takahashi.photo.attach(io: file, filename: 'user.png', cont
 
 puts "Creating Service Seeds..."
 # SERVICE SEEDS...
+
+general_plumbing_maintenance_kazuo = Service.create!(
+  title: "General Plumbing Maintenance & Installation",
+  price: "10000 per hour",
+  description: "Expert plumbing maintenance and new installations. From fixing drips and leaks to installing new fixtures and appliances, Kazuo Tanaka ensures your plumbing is in top condition.",
+  schedule: "Weekdays, 9 AM - 5 PM",
+  user: professional_kazuo_tanaka,
+  category: "Plumbing Maintenance, Fixture Installation, Appliance Installation, Leak Repairs",
+  address: "5 Chome-16-5 Roppongi, Tokyo"
+)
+general_plumbing_maintenance_kazuo_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709559625/profinder/cq5dam.web.1280.1280_c7lmcq.jpg"
+general_plumbing_maintenance_kazuo_file = URI.open(general_plumbing_maintenance_kazuo_url)
+general_plumbing_maintenance_kazuo.photo.attach(
+  io: general_plumbing_maintenance_kazuo_file,
+  filename: "general_plumbing_maintenance_kazuo_image.avif",
+  content_type: "image/avif"
+)
+
+plumbing_emergency_service_kazuo = Service.create!(
+  title: "24/7 Plumbing Emergency Service",
+  price: "15000 per call-out",
+  description: "Immediate response for all your plumbing emergencies. Leak repairs, pipe blockages, heating issues, and more. Kazuo Tanaka brings expertise and peace of mind, anytime.",
+  schedule: "Available 24/7",
+  user: professional_kazuo_tanaka,
+  category: "Plumbing, Emergency Repair, Leak Repair, Blockages",
+  address: "5 Chome-16-5 Roppongi, Tokyo"
+)
+plumbing_emergency_service_kazuo_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709559362/profinder/photo-1585704032915-c3400ca199e7_dwz6ku.avif"
+plumbing_emergency_service_kazuo_file = URI.open(plumbing_emergency_service_kazuo_url)
+plumbing_emergency_service_kazuo.photo.attach(
+  io: plumbing_emergency_service_kazuo_file,
+  filename: "plumbing_emergency_service_kazuo_image.avif",
+  content_type: "image/avif"
+)
+
+car_diagnostic_repair_haruto = Service.create!(
+  title: "Car Diagnostic & Repair",
+  price: "15000 per session",
+  description: "Comprehensive car diagnostic and repair service to identify and fix issues. Using the latest technology, Haruto nagasaki ensures your vehicle is running smoothly and efficiently.",
+  schedule: "Weekdays, 9 AM - 6 PM",
+  user: professional_haruto_nagasaki,
+  category: "Car Repair, Diagnostic, Maintenance, Vehicle Service",
+  address: "2 Chome-11-3 Shibuya, Tokyo"
+)
+car_diagnostic_repair_haruto_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709560058/profinder/photo-1498887960847-2a5e46312788_ixbmrm.avif"
+car_diagnostic_repair_haruto_file = URI.open(car_diagnostic_repair_haruto_url)
+car_diagnostic_repair_haruto.photo.attach(
+  io: car_diagnostic_repair_haruto_file,
+  filename: "car_diagnostic_repair_haruto_image.avif",
+  content_type: "image/avif"
+)
+
+regular_maintenance_checkup_haruto = Service.create!(
+  title: "Regular Maintenance & Check-up",
+  price: "12000 per check-up",
+  description: "Keep your car in top condition with regular maintenance and check-ups. Haruto nagasaki covers everything from oil changes to brake checks to ensure your safety and vehicle's longevity.",
+  schedule: "By appointment",
+  user: professional_haruto_nagasaki,
+  category: "Regular Maintenance, Safety Check, Vehicle Longevity, Oil Change",
+  address: "2 Chome-11-3 Shibuya, Tokyo"
+)
+regular_maintenance_checkup_haruto_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709559992/profinder/photo-1486262715619-67b85e0b08d3_fw60bk.avif"
+regular_maintenance_checkup_haruto_file = URI.open(regular_maintenance_checkup_haruto_url)
+regular_maintenance_checkup_haruto.photo.attach(
+  io: regular_maintenance_checkup_haruto_file,
+  filename: "regular_maintenance_checkup_haruto_image.avif",
+  content_type: "image/avif"
+)
+
+emergency_roadside_assistance_haruto = Service.create!(
+  title: "Emergency Roadside Assistance",
+  price: "Variable based on service required",
+  description: "Haruto nagasaki provides emergency roadside assistance for sudden breakdowns or accidents. Quick response, towing, and on-the-spot repairs to get you back on the road safely.",
+  schedule: "24/7",
+  user: professional_haruto_nagasaki,
+  category: "Roadside Assistance, Emergency Service, Towing, On-the-Spot Repair",
+  address: "2 Chome-11-3 Shibuya, Tokyo"
+)
+emergency_roadside_assistance_haruto_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709559956/profinder/photo-1569176330438-fa1ed1042542_eeran4.avif"
+emergency_roadside_assistance_haruto_file = URI.open(emergency_roadside_assistance_haruto_url)
+emergency_roadside_assistance_haruto.photo.attach(
+  io: emergency_roadside_assistance_haruto_file,
+  filename: "emergency_roadside_assistance_haruto_image.avif",
+  content_type: "image/avif"
+)
+
+
 catering_jamie_flavor = Service.create!(
 title: "Catering",
 price: "15000 per 10 meals (purchase only in per 10 pack)",
@@ -450,7 +572,8 @@ home_cooking_lessons_jamie_flavor = Service.create!(
   description: "Learn to cook like a pro from the comfort of your home. Jamie Flavor brings his expertise in fusion cuisine directly to your kitchen.",
   schedule: "Weekends, 10 AM - 2 PM",
   user: professional_jamie_flavor,
-  category: "Cooking Lessons, Home Cooking, Fusion Cuisine, Culinary Skills"
+  category: "Cooking Lessons, Home Cooking, Fusion Cuisine, Culinary Skills",
+  address: "2 Chome-11-3 Meguro, Tokyo"
 )
 home_cooking_lessons_jamie_flavor_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709251589/profinder/photo-1466637574441-749b8f19452f_ao8omi.avif"
 home_cooking_lessons_jamie_flavor_file = URI.open(home_cooking_lessons_jamie_flavor_url)
@@ -466,7 +589,8 @@ meal_planning_nutrition_jamie_flavor = Service.create!(
   description: "Customized meal planning and nutrition advice to fit your lifestyle. Jamie Flavor combines his culinary expertise with a focus on health and wellness.",
   schedule: "By appointment",
   user: professional_jamie_flavor,
-  category: "Meal Planning, Nutrition, Healthy Eating, Lifestyle"
+  category: "Meal Planning, Nutrition, Healthy Eating, Lifestyle",
+  address: "2 Chome-11-3 Meguro, Tokyo"
 )
 meal_planning_nutrition_jamie_flavor_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709251684/profinder/photo-1463740839922-2d3b7e426a56_xdghku.avif"
 meal_planning_nutrition_jamie_flavor_file = URI.open(meal_planning_nutrition_jamie_flavor_url)
@@ -482,7 +606,8 @@ legal_consultation_chris_justice = Service.create!(
   description: "Comprehensive legal services for individuals and businesses. Specializing in civil rights, contract law, and dispute resolution.",
   schedule: "Weekdays 9 AM to 5 PM",
   user: professional_chris_justice,
-  category: "Legal Advice, Civil Rights, Contract Law, Dispute Resolution"
+  category: "Legal Advice, Civil Rights, Contract Law, Dispute Resolution",
+  address: "2 Chome-10-1 Shibuya, Shibuya, Tokyo"
 )
 legal_consultation_chris_justice_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709219309/profinder/premium_photo-1694281930514-4f4a760538de_prrjux.avif"
 legal_consultation_chris_justice_file = URI.open(legal_consultation_chris_justice_url)
@@ -498,7 +623,8 @@ startup_legal_advisory_chris_justice = Service.create!(
   description: "Navigate the legal landscape of starting a business with confidence. Chris Justice offers expert advice on incorporation, intellectual property, contracts, and compliance.",
   schedule: "Weekdays 9 AM to 5 PM",
   user: professional_chris_justice,
-  category: "Startup Law, Intellectual Property, Contracts, Compliance"
+  category: "Startup Law, Intellectual Property, Contracts, Compliance",
+  address: "2 Chome-10-1 Shibuya, Shibuya, Tokyo"
 )
 startup_legal_advisory_chris_justice_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709251765/profinder/photo-1589829545856-d10d557cf95f_bxs6x4.avif"
 startup_legal_advisory_chris_justice_file = URI.open(startup_legal_advisory_chris_justice_url)
@@ -549,7 +675,8 @@ cosmetic_dentistry_sam_smiles = Service.create!(
   description: "Transform your smile with our cosmetic dentistry services. From teeth whitening to veneers, Dr. Sam Smiles offers a range of procedures to enhance your smile.",
   schedule: "Mon to Fri, 8 AM - 3 PM",
   user: professional_sam_smiles,
-  category: "Teeth Whitening, Veneers, Cosmetic Procedures, Smile Makeover"
+  category: "Teeth Whitening, Veneers, Cosmetic Procedures, Smile Makeover",
+  address:  "1 Chome-9-7 Minato, Tokyo"
 )
 cosmetic_dentistry_sam_smiles_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709252495/profinder/photo-1525893277997-207c04d47d65_f926xz.avif"
 cosmetic_dentistry_sam_smiles_file = URI.open(cosmetic_dentistry_sam_smiles_url)
@@ -565,7 +692,8 @@ emergency_dental_services_sam_smiles = Service.create!(
   description: "Immediate dental care when you need it most. Dr. Sam Smiles provides urgent treatment for dental emergencies, including pain relief, infections, and accidents.",
   schedule: "24/7 for emergencies",
   user: professional_sam_smiles,
-  category: "Urgent Care, Pain Relief, Infection Treatment, Accidental Damage"
+  category: "Urgent Care, Pain Relief, Infection Treatment, Accidental Damage",
+  address: "1 Chome-9-7 Minato, Tokyo"
 )
 emergency_dental_services_sam_smiles_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709252561/profinder/photo-1616391182219-e080b4d1043a_xde22k.avif"
 emergency_dental_services_sam_smiles_file = URI.open(emergency_dental_services_sam_smiles_url)
@@ -581,7 +709,8 @@ photography_ava_shutter = Service.create!(
   description: "Capture life's moments with professional photography. Specializes in portrait and event photography.",
   schedule: "By appointment",
   user: professional_ava_shutter,
-  category: "Photography, Portraits, Events, Lifestyle"
+  category: "Photography, Portraits, Events, Lifestyle",
+  address: "4 Chome-11-5 Taito, Tokyo"
 )
 photography_ava_shutter_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709225852/profinder/photo-1505739998589-00fc191ce01d_z09h8x.avif"
 photography_ava_shutter_file = URI.open(photography_ava_shutter_url)
@@ -597,7 +726,8 @@ wedding_photography_ava_shutter = Service.create!(
   description: "Capture your special day with Ava Shutter's wedding photography. Offering a blend of candid moments and posed portraits to forever memorialize your celebration.",
   schedule: "By appointment",
   user: professional_ava_shutter,
-  category: "Weddings, Event Photography, Portraits, Candid Shots"
+  category: "Weddings, Event Photography, Portraits, Candid Shots",
+  address: "4 Chome-11-5 Taito, Tokyo"
 )
 wedding_photography_ava_shutter_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709252685/profinder/photo-1533091090875-1ff4acc497dd_nzj4fq.avif"
 wedding_photography_ava_shutter_file = URI.open(wedding_photography_ava_shutter_url)
@@ -613,7 +743,8 @@ photography_lessons_ava_shutter = Service.create!(
   description: "Learn the art of photography with Ava Shutter. From basics to advanced techniques, these lessons cover various aspects of photography tailored to your skill level.",
   schedule: "Weekends, 9 AM - 1 PM",
   user: professional_ava_shutter,
-  category: "Photography Basics, Advanced Techniques, Camera Handling, Photo Editing"
+  category: "Photography Basics, Advanced Techniques, Camera Handling, Photo Editing",
+  address: "4 Chome-11-5 Taito, Tokyo"
 )
 photography_lessons_ava_shutter_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709252753/profinder/photo-1613235577937-9ac3eed992fc_h613nn.avif"
 photography_lessons_ava_shutter_file = URI.open(photography_lessons_ava_shutter_url)
@@ -629,7 +760,8 @@ accounting_lee_numbers = Service.create!(
   description: "Detail-oriented accountant with expertise in tax planning and financial analysis. Helping businesses and individuals achieve financial health.",
   schedule: "Mon to Fri, 9 AM - 4 PM",
   user: professional_lee_numbers,
-  category: "Accounting, Tax Planning, Financial Analysis, Consultation"
+  category: "Accounting, Tax Planning, Financial Analysis, Consultation",
+  address: "6 Chome-10-2 Roppongi, Minato, Tokyo"
 )
 accounting_lee_numbers_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226014/profinder/photo-1457904375453-3e1fc2fc76f4_gs4ebe.avif"
 accounting_lee_numbers_file = URI.open(accounting_lee_numbers_url)
@@ -645,7 +777,8 @@ personal_finance_consulting_lee_numbers = Service.create!(
   description: "Gain control over your finances with expert advice from Lee Numbers. Offering personalized consulting on budgeting, saving, investing, and tax planning.",
   schedule: "Weekdays 9 AM to 4 PM",
   user: professional_lee_numbers,
-  category: "Budgeting, Saving, Investing, Tax Planning"
+  category: "Budgeting, Saving, Investing, Tax Planning",
+  address: "6 Chome-10-2 Roppongi, Minato, Tokyo"
 )
 personal_finance_consulting_lee_numbers_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253055/profinder/premium_photo-1661775845874-a3722dfb75b9_jbev01.avif"
 personal_finance_consulting_lee_numbers_file = URI.open(personal_finance_consulting_lee_numbers_url)
@@ -661,7 +794,8 @@ tax_return_assistance_lee_numbers = Service.create!(
   description: "Simplify your tax season with professional tax return assistance from Lee Numbers. From personal filings to small business taxes, ensure accuracy and maximize your returns.",
   schedule: "January - April, Weekdays 9 AM to 6 PM",
   user: professional_lee_numbers,
-  category: "Tax Filing, Tax Optimization, Small Business Taxes, Personal Taxes"
+  category: "Tax Filing, Tax Optimization, Small Business Taxes, Personal Taxes",
+  address: "6 Chome-10-2 Roppongi, Minato, Tokyo"
 )
 tax_return_assistance_lee_numbers_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253198/profinder/premium_photo-1679923913530-16c91821a213_dmei8k.avif"
 tax_return_assistance_lee_numbers_file = URI.open(tax_return_assistance_lee_numbers_url)
@@ -673,11 +807,12 @@ tax_return_assistance_lee_numbers.photo.attach(
 
 full_stack_dev_alex_taylor = Service.create!(
   title: "Full-stack Development",
-  price: "40000 per project",
+  price: "60000 per week",
   description: "End-to-end web development services from database to front-end, leveraging the latest technologies for robust and scalable applications.",
   schedule: "Mon to Fri, 10 AM - 7 PM",
   user: professional_alex_taylor,
-  category: "Web Development, Mobile Applications, Software Engineering, Technology Solutions"
+  category: "Web Development, Mobile Applications, Software Engineering, Technology Solutions",
+  address: "4 Chome-8-7 Ginza, Tokyo"
 )
 full_stack_dev_alex_taylor_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226239/profinder/photo-1629904853893-c2c8981a1dc5_hk9lzk.avif"
 full_stack_dev_alex_taylor_file = URI.open(full_stack_dev_alex_taylor_url)
@@ -695,7 +830,8 @@ digital_marketing_morgan_bailey = Service.create!(
   description: "Boost your brand's online presence with our comprehensive digital marketing services, including SEO, content marketing, and social media management.",
   schedule: "Flexible scheduling available",
   user: professional_morgan_bailey,
-  category: "SEO, Social Media, Content Marketing, Brand Strategy"
+  category: "SEO, Social Media, Content Marketing, Brand Strategy",
+  address: "6 Chome-10-2 Roppongi, Minato, Tokyo"
 )
 digital_marketing_morgan_bailey_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709219657/profinder/photo-1611926653458-09294b3142bf_ra5fip.avif"
 digital_marketing_morgan_bailey_file = URI.open(digital_marketing_morgan_bailey_url)
@@ -711,7 +847,8 @@ graphic_design_christina_jones = Service.create!(
   description: "Creative and impactful graphic design solutions for your branding, marketing materials, and digital presence. From logos to websites, bring your vision to life.",
   schedule: "Mon to Fri, 9 AM - 6 PM",
   user: professional_christina_jones,
-  category: "Branding, UI/UX Design, Print Materials, Digital Media"
+  category: "Branding, UI/UX Design, Print Materials, Digital Media",
+  address: "7 Chome-5-3 Ginza, Chuo, Tokyo"
 )
 graphic_design_christina_jones_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709224433/profinder/premium_photo-1661281347096-4a250151f422_uoc40q.avif"
 graphic_design_christina_jones_file = URI.open(graphic_design_christina_jones_url)
@@ -727,7 +864,8 @@ freelance_writing_kim_parker = Service.create!(
   description: "Elevate your content with engaging, SEO-optimized articles crafted by a professional freelance writer. Specializing in blog posts, web content, and editorials.",
   schedule: "Project-based timelines",
   user: professional_kim_parker,
-  category: "Content Writing, SEO Optimization, Blogging, Editorial Writing"
+  category: "Content Writing, SEO Optimization, Blogging, Editorial Writing",
+  address: "4 Chome-2-8 Nakano, Nakano, Tokyo"
 )
 freelance_writing_kim_parker_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709219971/profinder/photo-1505682634904-d7c8d95cdc50_qrgyqt.avif"
 freelance_writing_kim_parker_file = URI.open(freelance_writing_kim_parker_url)
@@ -743,7 +881,8 @@ project_management_lee_jordan = Service.create!(
   description: "Expert project management for IT, construction, and event planning, ensuring your projects are completed efficiently and effectively.",
   schedule: "Mon to Fri, 9 AM - 5 PM",
   user: professional_lee_jordan,
-  category: "IT Projects, Construction Management, Event Planning, Budgeting & Planning"
+  category: "IT Projects, Construction Management, Event Planning, Budgeting & Planning",
+  address: "5 Chome-12-7 Koenji, Suginami, Tokyo"
 )
 project_management_lee_jordan_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709220582/profinder/photo-1531403009284-440f080d1e12_s7hrcn.avif"
 project_management_lee_jordan_file = URI.open(project_management_lee_jordan_url)
@@ -759,7 +898,8 @@ data_science_consulting_sam_rivera = Service.create!(
   description: "Expert data science consulting services to help you leverage big data for actionable insights, with a focus on machine learning and predictive analytics.",
   schedule: "By appointment",
   user: professional_sam_rivera,
-  category: "Big Data, Predictive Analytics, Machine Learning, Data Visualization"
+  category: "Big Data, Predictive Analytics, Machine Learning, Data Visualization",
+  address: "8 Chome-3-22 Ikebukuro, Toshima, Tokyo"
 )
 data_science_consulting_sam_rivera_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226771/profinder/photo-1551288049-bebda4e38f71_ct9ljo.avif"
 data_science_consulting_sam_rivera_file = URI.open(data_science_consulting_sam_rivera_url)
@@ -775,7 +915,8 @@ cybersecurity_taylor_green = Service.create!(
   description: "Protect your digital assets with cutting-edge cybersecurity strategies. Offering threat assessment, system fortification, and emergency response.",
   schedule: "By appointment",
   user: professional_taylor_green,
-  category: "Cybersecurity, Threat Assessment, IT Fortification, Cyber Emergency Response"
+  category: "Cybersecurity, Threat Assessment, IT Fortification, Cyber Emergency Response",
+  address: "5 Chome-2-1 Roppongi, Tokyo"
 )
 cybersecurity_taylor_green_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709220634/profinder/photo-1614064548237-096f735f344f_ylukgy.avif"
 cybersecurity_taylor_green_file = URI.open(cybersecurity_taylor_green_url)
@@ -791,7 +932,8 @@ mobile_app_dev_jordan_casey = Service.create!(
   description: "Innovative mobile app development services for iOS and Android. Specializing in user-centric design and seamless functionality.",
   schedule: "Mon to Fri, 9 AM - 6 PM",
   user: professional_jordan_casey,
-  category: "iOS Development, Android Development, Cross-Platform Solutions, App Design"
+  category: "iOS Development, Android Development, Cross-Platform Solutions, App Design",
+  address: "9 Chome-4-7 Akihabara, Tokyo"
 )
 mobile_app_dev_jordan_casey_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226865/profinder/photo-1512941937669-90a1b58e7e9c_iumuap.avif"
 mobile_app_dev_jordan_casey_file = URI.open(mobile_app_dev_jordan_casey_url)
@@ -807,7 +949,8 @@ startup_consulting_casey_lee = Service.create!(
   description: "Strategic startup consulting services to help entrepreneurs navigate the complexities of launching and growing a successful business.",
   schedule: "By appointment",
   user: professional_casey_lee,
-  category: "Business Strategy, Financial Planning, Market Analysis, Growth Hacking"
+  category: "Business Strategy, Financial Planning, Market Analysis, Growth Hacking",
+  address: "2 Chome-18-5 Ebisu, Shibuya, Tokyo"
 )
 startup_consulting_casey_lee_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226923/profinder/photo-1556761175-5973dc0f32e7_vdenan.avif"
 startup_consulting_casey_lee_file = URI.open(startup_consulting_casey_lee_url)
@@ -823,7 +966,8 @@ ui_ux_design_alex_morgan = Service.create!(
   description: "Creating intuitive and engaging user interfaces for web and mobile applications, with a focus on user experience and design thinking.",
   schedule: "Mon to Fri, 10 AM - 5 PM",
   user: professional_alex_morgan,
-  category: "User Interface Design, User Experience Design, Interactive Design, Prototype Testing"
+  category: "User Interface Design, User Experience Design, Interactive Design, Prototype Testing",
+  address: "3 Chome-9-2 Nihonbashi, Chuo, Tokyo"
 )
 ui_ux_design_alex_morgan_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226996/profinder/photo-1522542550221-31fd19575a2d_ei8adx.avif"
 ui_ux_design_alex_morgan_file = URI.open(ui_ux_design_alex_morgan_url)
@@ -839,7 +983,8 @@ personal_training_jordan_flex = Service.create!(
   description: "Customized personal training programs designed to meet your fitness goals. Whether it's weight loss, muscle gain, or improved athletic performance, Jordan Flex will guide you every step of the way.",
   schedule: "By appointment",
   user: professional_jordan_flex,
-  category: "Personal Training, Fitness, Weight Loss, Muscle Gain"
+  category: "Personal Training, Fitness, Weight Loss, Muscle Gain",
+  address: "7 Chome-1-8 Akasaka, Minato, Tokyo"
 )
 personal_training_jordan_flex_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253394/profinder/photo-1571019614242-c5c5dee9f50b_gf81lw.avif"
 personal_training_jordan_flex_file = URI.open(personal_training_jordan_flex_url)
@@ -855,7 +1000,8 @@ nutrition_coaching_jordan_flex = Service.create!(
   description: "Achieve your health and fitness goals faster with tailored nutrition coaching. Jordan Flex offers expert advice on diet planning, meal prep, and nutrition strategies to complement your training regimen.",
   schedule: "By appointment",
   user: professional_jordan_flex,
-  category: "Nutrition, Diet Planning, Meal Prep, Health Goals"
+  category: "Nutrition, Diet Planning, Meal Prep, Health Goals",
+  address: "7 Chome-1-8 Akasaka, Minato, Tokyo"
 )
 nutrition_coaching_jordan_flex_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253458/profinder/photo-1535914254981-b5012eebbd15_gex0nq.avif"
 nutrition_coaching_jordan_flex_file = URI.open(nutrition_coaching_jordan_flex_url)
@@ -871,7 +1017,8 @@ general_health_checkups = Service.create!(
   description: "Routine health checkups for all ages to monitor health status, detect early signs of disease, and discuss lifestyle habits for long-term wellness.",
   schedule: "Weekdays, 9 AM - 5 PM",
   user: professional_dr_emily_hart,
-  category: "Routine Checkup, Disease Prevention, Health Monitoring, Lifestyle Guidance"
+  category: "Routine Checkup, Disease Prevention, Health Monitoring, Lifestyle Guidance",
+  address: "7 Chome-9-1 Ueno, Tokyo"
 )
 general_health_checkups_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253986/profinder/photo-1576766125535-b04e15fd0273_g5fuku.avif"
 general_health_checkups_file = URI.open(general_health_checkups_url)
@@ -887,7 +1034,8 @@ comprehensive_health_screenings = Service.create!(
   description: "Extensive health screenings to assess risk factors and identify early signs of diseases. Tailored advice on prevention and lifestyle modifications for optimal health.",
   schedule: "Weekdays, 9 AM - 4 PM",
   user: professional_dr_emily_hart,
-  category: "Preventative Care, Health Screening, Risk Assessment, Lifestyle Advice"
+  category: "Preventative Care, Health Screening, Risk Assessment, Lifestyle Advice",
+  address: "7 Chome-9-1 Ueno, Tokyo"
 )
 comprehensive_health_screenings_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253904/profinder/photo-1505751172876-fa1923c5c528_ypizoc.avif"
 comprehensive_health_screenings_file = URI.open(comprehensive_health_screenings_url)
@@ -904,7 +1052,8 @@ rental_assistance_for_foreigners = Service.create!(
   description: "Comprehensive assistance finding and securing rental properties in Japan, tailored to the needs of foreigners. Includes property viewings, negotiation with landlords, and understanding rental agreements.",
   schedule: "By appointment",
   user: professional_mia_tanaka,
-  category: "Rentals, Leasing Assistance, Negotiation, Contract Explanation"
+  category: "Rentals, Leasing Assistance, Negotiation, Contract Explanation",
+  address: "3 Chome-8-6 Komagome, Toshima, Tokyo"
 )
 rental_assistance_for_foreigners_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709254453/profinder/premium_photo-1661775953246-410e3a33977c_gam9ox.avif"
 rental_assistance_for_foreigners_file = URI.open(rental_assistance_for_foreigners_url)
@@ -920,7 +1069,8 @@ home_purchase_consultation = Service.create!(
   description: "Expert guidance through the process of purchasing a home in Japan, from property search to closing. Services include market analysis, property inspections, negotiation, and legal paperwork.",
   schedule: "By appointment",
   user: professional_mia_tanaka,
-  category: "Home Buying, Market Analysis, Property Inspection, Legal Paperwork"
+  category: "Home Buying, Market Analysis, Property Inspection, Legal Paperwork",
+  address: "6 Chome-14-2 Shinagawa, Tokyo"
 )
 home_purchase_consultation_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709254531/profinder/photo-1480796927426-f609979314bd_dwh6wd.avif"
 home_purchase_consultation_file = URI.open(home_purchase_consultation_url)
@@ -952,7 +1102,8 @@ business_japanese_and_cultural_etiquette = Service.create!(
   description: "Master business Japanese and understand the nuances of Japanese corporate culture. Ideal for professionals seeking to work in Japan or collaborate with Japanese companies.",
   schedule: "By appointment",
   user: professional_akira_sato,
-  category: "Business Japanese, Cultural Etiquette, Professional Language Use, Corporate Culture"
+  category: "Business Japanese, Cultural Etiquette, Professional Language Use, Corporate Culture",
+  address: "1 Chome-5-7 Nishi-Shinjuku, Tokyo"
 )
 business_japanese_and_cultural_etiquette_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709255002/profinder/photo-1473167146081-90eecb675695_d1jp1z.avif"
 business_japanese_and_cultural_etiquette_file = URI.open(business_japanese_and_cultural_etiquette_url)
@@ -968,7 +1119,8 @@ schooling_options_consultation = Service.create!(
   description: "Personalized consultation services to help expatriate families understand and navigate the schooling options available in Japan. From international schools that offer curricula in English to local Japanese schools that provide immersion experiences, Naomi Kato offers insights, application assistance, and strategies for educational success in Japan.",
   schedule: "By appointment",
   user: professional_naomi_kato,
-  category: "International Schools, Local Education System, Bilingual Education, School Application Assistance"
+  category: "International Schools, Local Education System, Bilingual Education, School Application Assistance",
+  address: "4 Chome-8-1 Ikebukuro, Tokyo"
 )
 schooling_options_consultation_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709255238/profinder/photo-1617721926586-4eecce739745_llychr.avif"
 schooling_options_consultation_file = URI.open(schooling_options_consultation_url)
@@ -984,7 +1136,8 @@ investment_planning_strategy = Service.create!(
   description: "Tailored investment planning and strategy sessions designed to help expatriates maximize their returns while navigating the complexities of investing in Japan. From stocks and bonds to real estate investments, Hiroshi Takahashi provides expert advice to grow your portfolio.",
   schedule: "By appointment",
   user: professional_hiroshi_takahashi,
-  category: "Investment Planning, Portfolio Management, Financial Strategy, Expatriate Finance"
+  category: "Investment Planning, Portfolio Management, Financial Strategy, Expatriate Finance",
+  address: "7 Chome-19-5 Kichijoji, Musashino, Tokyo"
 )
 investment_planning_strategy_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709255367/profinder/premium_photo-1661688996907-2b2d12d35f9f_tyuhac.avif"
 investment_planning_strategy_file = URI.open(investment_planning_strategy_url)
@@ -1000,7 +1153,8 @@ tax_optimization_filing_assistance = Service.create!(
   description: "Comprehensive service offering personalized tax optimization strategies and filing assistance for expatriates living in Japan. Hiroshi Takahashi ensures you understand your tax obligations and can take advantage of all applicable tax benefits.",
   schedule: "January - March, Weekdays 9 AM - 5 PM",
   user: professional_hiroshi_takahashi,
-  category: "Tax Filing, Tax Optimization, Expatriate Taxation, Financial Planning"
+  category: "Tax Filing, Tax Optimization, Expatriate Taxation, Financial Planning",
+  address: "7 Chome-19-5 Kichijoji, Musashino, Tokyo"
 )
 tax_optimization_filing_assistance_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709255423/profinder/premium_photo-1661639419961-6158e94e4f47_wuklpt.avif"
 tax_optimization_filing_assistance_file = URI.open(tax_optimization_filing_assistance_url)
@@ -1156,10 +1310,6 @@ review_john_smith_immigration_assistance = Review.create!(
   user: user_john_smith,
   service: immigration_documentation_assistance_chris_justice
 )
-
-
-
-
 
 
 
