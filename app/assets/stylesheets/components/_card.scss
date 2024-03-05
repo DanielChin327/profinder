@@ -65,9 +65,10 @@
   }}
 }
 
-.card-product img{
-  width: 40px;
-  height: 40px;
+.card-product-image{
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
 }
 
 .vr-card {

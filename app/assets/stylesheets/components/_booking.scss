@@ -1,7 +1,31 @@
 .card-booking-container {
-  padding: 40px 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+  outline: 2px solid $purple;
+  border-radius: 10px;
 }
 .booking-card-width{
   width: 80%;
 }
 
+.booking-product {
+  border-left: 5px solid white;
+  padding: 5px;
+  overflow: hidden;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+}
+
+.booking-product img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.booking-product .booking-product-infos {
+  padding: 16px;
+  width: 65%;
+}
