@@ -14,8 +14,10 @@
           <% end %>
         </div>
         <h1><%= @service.title%></h1>
-        <%= render "shared/star_icon_rating", rating: @service_rating,  name: "Service: " %>
-        <%= render "shared/star_icon_rating", rating: @eng_rating, name: "English: "%>
+        <div class="show_star_rating">
+          <p><%= render "shared/star_icon_rating", rating: @service_rating,  name: "Service: " %></p>
+          <p><%= render "shared/star_icon_rating", rating: @eng_rating, name: "English: "%></p>
+        </div>
         <div class="info"><i class="fa-solid fa-yen-sign me-2"></i><%= @service.price%> </div>
         <div class="info"> <i class="fa-solid fa-calendar-days me-2"></i> <%=@service.schedule%> </span></div>
       <div class="text"><%= @service.description%> </div>
