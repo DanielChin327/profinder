@@ -53,8 +53,9 @@ class ServicesController < ApplicationController
       lat: @service.latitude,
       lng: @service.longitude,
       info_window_html: render_to_string(partial: "info_window", locals: {service: @service, average_rating: @service_rating}),
-      marker_html: render_to_string(partial: "map_marker", locals: {service: @service}) #@service?
+      marker_html: render_to_string(partial: "map_marker", locals: {service: @service})
     }]
+
   end
 
   private
