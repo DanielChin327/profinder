@@ -3,7 +3,7 @@ require 'nokogiri'
 
 puts "Cleaning the DB..."
 Service.destroy_all
-@.destroy_all
+User.destroy_all
 Review.destroy_all
 puts "Creating users..."
 
