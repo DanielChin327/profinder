@@ -1,34 +1,32 @@
 <div class="card-container">
-  <div class="card-scroll-box">
-    <div class="card-shadow">
-      <% @services.each do |service| %>
-        <%= link_to service_path(service), class: 'card-product-link' do %>
-          <div class="card-product p-2">
-            <%= cl_image_tag(service.photo.key, class: 'card-product-image') %>
-            <div class="card-product-infos">
-              <h2><%= service.title %></h2>
-              <% service.category.split(",").each do |category|%>
-                <span class="tag"><%= category %></span>
-              <% end %>
-              <p class="truncate"><%= service.description %></p>
-            </div>
-            <div class="card-star-rating">
-              <% service_rating = service.reviews.average(:rating) || 0 %>
-              <p><%= render "shared/star_icon_rating", rating: service_rating, name: "" %></p>
-            </div>
-            <div class="card-image-price d-flex flex-column align-items-end">
-              <h3>¥<%= service.price %></h3>
-              <% if service.user.photo.attached? %>
-                <%= cl_image_tag service.user.photo.key, class: "avatar" %>
-              <% else %>
-                <%= image_tag "icon.png", class: "avatar" %>
-              <% end %>
-            </div>
+  <% @services.each do |service| %>
+    <%= link_to service_path(service), class: 'card-product-link' do %>
+      <div class="card-product p-2">
+        <%= cl_image_tag(service.photo.key, class: 'card-product-image') %>
+        <div class="card-product-infos">
+          <h2><%= service.title %></h2>
+          <div class="tags-container">
+            <% service.category.split(",").each do |category|%>
+              <span class="tag"><%= category %></span>
+            <% end %>
           </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+          <p class="truncate"><%= service.description %></p>
+        </div>
+        <div class="card-image-price d-flex flex-column align-items-center">
+          <h3>¥<%= service.price %></h3>
+          <% if service.user.photo.attached? %>
+            <%= cl_image_tag service.user.photo.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag "icon.png", class: "avatar" %>
+          <% end %>
+          <div class="card-star-rating">
+            <% service_rating = service.reviews.average(:rating) || 0 %>
+            <p><%= render "shared/star_icon_rating", rating: service_rating, name: "" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
   <div style="font-size: 2rem;">
     <%= paginate @services %>
   </div>

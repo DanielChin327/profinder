@@ -7,7 +7,7 @@
           <%= cl_image_tag(bookmark.service.photo.key, class: "bookmark-product-image") %>
         </div>
         <div class="bookmark-product-text">
-          <%= link_to(bookmark.service.title, service_path(bookmark.service), class: "truncate btn btn-link text-decoration-none ") %>
+          <%= link_to(bookmark.service.title, service_path(bookmark.service), class: "truncate btn btn-link text-decoration-none") %>
           <div class="bookmark-product-infos">
             <p><%= bookmark.service.user.username %></p>
             <p><%= bookmark.service.user.email %></p>
@@ -17,7 +17,7 @@
         <div class="bookmark-image-price">
           <p>¥ <%= bookmark.service.price %></p>
         </div>
-        <div style="margin-left: auto; padding: 16px;">
+        <div style="margin: auto; padding: 16px;">
           <%= simple_form_for bookmark, method: :delete do |f| %>
             <%= f.submit 'Remove', class: 'btn button-regular' %>
           <% end %>
