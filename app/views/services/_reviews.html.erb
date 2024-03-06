@@ -7,8 +7,8 @@
           <div class="reviews"><%= "'#{review.comment}'- " %>
             <%= review.user.username %>
             <div class="star_rating">
-              <p><%= render "shared/star_icon_rating", rating: @service_rating,  name: "Service: " %></p>
-              <p><%= render "shared/star_icon_rating", rating: @eng_rating, name: "English: "%></p>
+              <p><%= render "shared/star_icon_rating", rating: review.rating,  name: "Service: " %></p>
+              <p><%= render "shared/star_icon_rating", rating: review.eng_rating, name: "English: "%></p>
             </div>
           </div>
         </li>
