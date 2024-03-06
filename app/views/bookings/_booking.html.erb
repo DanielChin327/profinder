@@ -1,10 +1,13 @@
-<div class="booking-product">
-  <%= cl_image_tag(booking.service.photo.key) %>
-  <div class="booking-product-infos booking-card-width">
-    <h3><%="#{booking.service.title}"%></h3>
-    <p> <%#= "Period: #{booking.num_of_days} days" %></p>
-    <p><i class="fa-regular fa-calendar"></i> <%= booking.start_date %> - <%= booking.end_date %> (<%= booking.num_of_days %> days)</p>
-    <p><%= booking.service.description %></p>
+<div class="booking-block">
+<%= link_to "", service_path(booking.service), class: 'booking-product-overlay'%>
+  <div class="booking-product gap-3">
+    <%= cl_image_tag(booking.service.photo.key) %>
+    <div class="booking-product-infos booking-card-width">
+      <h3><%="#{booking.service.title}"%></h3>
+      <p> <%#= "Period: #{booking.num_of_days} days" %></p>
+      <p><i class="fa-regular fa-calendar"></i> <%= booking.start_date %> - <%= booking.end_date %> (<%= booking.num_of_days %> days)</p>
+      <p><%= booking.service.description %></p>
+    </div>
+    <%= render "bookings/status", booking: booking %>
   </div>
-  <%= render "bookings/status", booking: booking %>
 </div>

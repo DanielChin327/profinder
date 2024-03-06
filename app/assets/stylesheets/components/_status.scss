@@ -4,14 +4,29 @@
 }
 .booking-tag {
   padding: 10px;
-  background-color: $light-gray;
-  outline: 1px solid $purple;
-  color: $purple;
+  background-color: transparent;
   border-radius: 20px;
   font-weight: bold;
   font-size: 12px;
 }
+.booking-tag-pending{
+  outline: 2px solid $purple;
+  color: $purple;
+}
+.booking-tag-approved{
+  outline: 2px solid $green;
+  color: $green;
+}
+.booking-tag-rejected{
+  outline: 2px solid $red;
+  color: $red;
+}
 .booking-status {
   opacity: .6;
   padding: 10px;
+
+}
+
+.status-button{
+  z-index: 2;
 }
