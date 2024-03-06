@@ -824,6 +824,7 @@ tax_return_assistance_tanaka_sousuke.photo.attach(
   content_type: "image/avif"
 )
 
+sleep(1)
 house_moving_service_haruki_matsuda = Service.create!(
   title: "House Moving Services",
   price: "Contact for quote",
@@ -981,7 +982,7 @@ mobile_app_dev_jordan_casey.photo.attach(
 )
 sleep(1)
 startup_consulting_casey_lee = Service.create!(
-  title: "Startup Consulting",
+  title: "Finance Consulting",
   price: "30000 per consultation",
   description: "Strategic startup consulting services to help entrepreneurs navigate the complexities of launching and growing a successful business.",
   schedule: "By appointment",
@@ -1169,7 +1170,7 @@ schooling_options_consultation.photo.attach(
 )
 sleep(1)
 investment_planning_strategy = Service.create!(
-  title: "Investment Planning and Strategy",
+  title: "Personal Finance Planning and Strategy",
   price: "30000 per session",
   description: "Tailored investment planning and strategy sessions designed to help expatriates maximize their returns while navigating the complexities of investing in Japan. From stocks and bonds to real estate investments, Hiroshi Takahashi provides expert advice to grow your portfolio.",
   schedule: "By appointment",
@@ -1599,6 +1600,13 @@ review_mia_tanaka_startup_consulting = Review.create!(
   service: startup_consulting_casey_lee
 )
 
+booking_yoshio_kaneko_haruki_matsuda = Booking.create!(
+  start_date: Date.new(2024, 2, 1),
+  end_date: Date.new(2024, 2, 3),
+  status: "approved",
+  service: house_moving_service_haruki_matsuda,
+  user: user_Yoshio_Kaneko
+)
 
 
 
