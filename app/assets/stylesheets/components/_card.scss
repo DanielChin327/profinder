@@ -1,6 +1,6 @@
 //service index
 .card-container {
-  width: 920px;
+  width: 60%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -14,13 +14,17 @@
 .card-product {
   border-left: 5px solid white;
   padding: 5px;
-  overflow: hidden;
-  height: 120px;
+  //overflow: hidden;
+  //height: 120px;
   background: white;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 120px 60% auto auto;
   align-items: center;
   border-radius: $border-radius;
+}
+.card-star-rating {
+  flex-shrink: 0;
 }
 
 
@@ -31,9 +35,15 @@
   padding: 10px 5px;
 }
 
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card-product h3 {
+  text-align: center;
   font-size: 16px;
-  margin: 0;
+  margin-bottom: 16px;
 }
 
 .card-product p {
@@ -53,11 +63,13 @@
 
 .card-product .card-product-infos {
   padding: 16px;
-  width: 65%;
+  //width: 65%;
 }
 .card-product-link{
   text-decoration: none;
   color: unset;
+  display: block;
+  margin-bottom: 4px;
   &:hover{
     >.card-product{
       border-left: 5px solid $purple;

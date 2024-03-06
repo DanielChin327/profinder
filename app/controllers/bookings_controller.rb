@@ -15,7 +15,18 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render "services/show"
+      @bookmark = Bookmark.new
+      @review = Review.new
+      @reviews = Review.all
+      @marker = [{
+        lat: @service.latitude,
+        lng: @service.longitude,
+        info_window_html: render_to_string(partial: "services/info_window", locals: {service: @service, average_rating: @service_rating}),
+        marker_html: render_to_string(partial: "services/map_marker", locals: {service: @service})
+        }]
+      @service_rating = @service.reviews.average(:rating) || 0
+      @eng_rating = @service.reviews.average(:eng_rating) || 0
+      render "services/show", status: :unprocessable_entity
     end
   end
 
