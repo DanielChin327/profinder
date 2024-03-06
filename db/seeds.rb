@@ -775,7 +775,7 @@ photography_lessons_ava_shutter.photo.attach(
 sleep(1)
 accounting_tanaka_sousuke = Service.create!(
   title: "Accounting and Financial Planning",
-  price: "25000 per consultation",
+  price: "35000 per consultation",
   description: "Detail-oriented accountant with expertise in tax planning and financial analysis. Helping businesses and individuals achieve financial health.",
   schedule: "Mon to Fri, 9 AM - 4 PM",
   user: professional_tanaka_sousuke,
@@ -1459,10 +1459,11 @@ review_taylor_green_full_stack_dev = Review.create!(
 review_jordan_casey_full_stack_dev = Review.create!(
   rating: 5,
   comment: "Working with Alex on our mobile app development was a great experience. His expertise in full-stack development is exceptional.",
-  eng_rating: 5,
+  eng_rating: 3,
   user: professional_jordan_casey,
   service: full_stack_dev_alex_taylor
 )
+
 
 review_casey_lee_full_stack_dev = Review.create!(
   rating: 4,
@@ -1595,10 +1596,20 @@ review_akira_sato_investment_planning = Review.create!(
 review_mia_tanaka_startup_consulting = Review.create!(
   rating: 4,
   comment: "Casey's guidance on launching my startup in Japan was crucial. Her understanding of the market and strategic advice has set me on the right path.",
-  eng_rating: 5,
+  eng_rating: 3,
   user: professional_mia_tanaka,
   service: startup_consulting_casey_lee
 )
+
+review_sam_rivera_startup_consulting = Review.create!(
+  rating: 5,
+  comment: "Although Casey's knowledge was spot on, we had to resort to using Japanese (I'm Spanish and she is from Russia).",
+  eng_rating: 2,
+  user: professional_sam_rivera,
+  service: startup_consulting_casey_lee
+)
+
+
 
 booking_yoshio_kaneko_haruki_matsuda = Booking.create!(
   start_date: Date.new(2024, 2, 1),
