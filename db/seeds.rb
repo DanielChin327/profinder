@@ -5,6 +5,8 @@ puts "Cleaning the DB..."
 Service.destroy_all
 User.destroy_all
 Review.destroy_all
+Booking.destroy_all
+end
 puts "Creating users..."
 
 age = rand(25..60).to_s
