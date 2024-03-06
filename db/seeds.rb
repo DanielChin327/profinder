@@ -466,7 +466,7 @@ professional_hiroshi_takahashi.photo.attach(io: file, filename: 'user.png', cont
 
 puts "Creating Service Seeds..."
 # SERVICE SEEDS...
-
+sleep(1)
 general_plumbing_maintenance_kazuo = Service.create!(
   title: "General Plumbing Maintenance & Installation",
   price: "10000 per hour",
@@ -474,7 +474,7 @@ general_plumbing_maintenance_kazuo = Service.create!(
   schedule: "Weekdays, 9 AM - 5 PM",
   user: professional_kazuo_tanaka,
   category: "Plumbing Maintenance, Fixture Installation, Appliance Installation, Leak Repairs",
-  address: "5 Chome-16-5 Roppongi, Tokyo"
+  address: "4 Chome-2-8 Nakano, Nakano, Tokyo"
 )
 general_plumbing_maintenance_kazuo_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709559625/profinder/cq5dam.web.1280.1280_c7lmcq.jpg"
 general_plumbing_maintenance_kazuo_file = URI.open(general_plumbing_maintenance_kazuo_url)
@@ -483,7 +483,7 @@ general_plumbing_maintenance_kazuo.photo.attach(
   filename: "general_plumbing_maintenance_kazuo_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 plumbing_emergency_service_kazuo = Service.create!(
   title: "24/7 Plumbing Emergency Service",
   price: "15000 per call-out",
@@ -491,7 +491,7 @@ plumbing_emergency_service_kazuo = Service.create!(
   schedule: "Available 24/7",
   user: professional_kazuo_tanaka,
   category: "Plumbing, Emergency Repair, Leak Repair, Blockages",
-  address: "5 Chome-16-5 Roppongi, Tokyo"
+  address: "4 Chome-2-8 Nakano, Nakano, Tokyo"
 )
 plumbing_emergency_service_kazuo_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709559362/profinder/photo-1585704032915-c3400ca199e7_dwz6ku.avif"
 plumbing_emergency_service_kazuo_file = URI.open(plumbing_emergency_service_kazuo_url)
@@ -500,7 +500,7 @@ plumbing_emergency_service_kazuo.photo.attach(
   filename: "plumbing_emergency_service_kazuo_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 car_diagnostic_repair_haruto = Service.create!(
   title: "Car Diagnostic & Repair",
   price: "15000 per session",
@@ -517,7 +517,7 @@ car_diagnostic_repair_haruto.photo.attach(
   filename: "car_diagnostic_repair_haruto_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 regular_maintenance_checkup_haruto = Service.create!(
   title: "Regular Maintenance & Check-up",
   price: "12000 per check-up",
@@ -534,7 +534,7 @@ regular_maintenance_checkup_haruto.photo.attach(
   filename: "regular_maintenance_checkup_haruto_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 emergency_roadside_assistance_haruto = Service.create!(
   title: "Emergency Roadside Assistance",
   price: "Variable based on service required",
@@ -552,7 +552,7 @@ emergency_roadside_assistance_haruto.photo.attach(
   content_type: "image/avif"
 )
 
-
+sleep(1)
 catering_jamie_flavor = Service.create!(
 title: "Catering",
 price: "15000 per 10 meals (purchase only in per 10 pack)",
@@ -565,7 +565,7 @@ address: "2 Chome-11-3 Meguro, Tokyo"
 catering_jamie_flavor_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709211669/profinder/photo-1672826979217-7156a305acf5_tjgghf.avif"
 catering_jamie_flavor_file = URI.open(catering_jamie_flavor_url)
 catering_jamie_flavor.photo.attach(io: catering_jamie_flavor_file, filename: "catering_jamie_flavor_image", content_type: "image/avif")
-
+sleep(1)
 home_cooking_lessons_jamie_flavor = Service.create!(
   title: "Home Cooking Lessons",
   price: "5000 per lesson",
@@ -582,7 +582,7 @@ home_cooking_lessons_jamie_flavor.photo.attach(
   filename: "home_cooking_lessons_jamie_flavor_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 meal_planning_nutrition_jamie_flavor = Service.create!(
   title: "Meal Planning and Nutrition Consultation",
   price: "8000 per consultation",
@@ -599,7 +599,7 @@ meal_planning_nutrition_jamie_flavor.photo.attach(
   filename: "meal_planning_nutrition_jamie_flavor_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 legal_consultation_chris_justice = Service.create!(
   title: "Legal Consultation",
   price: "50000 per case",
@@ -616,7 +616,7 @@ legal_consultation_chris_justice.photo.attach(
   filename: "legal_consultation_chris_justice_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 startup_legal_advisory_chris_justice = Service.create!(
   title: "Startup Legal Advisory",
   price: "35000 per consultation",
@@ -633,7 +633,7 @@ startup_legal_advisory_chris_justice.photo.attach(
   filename: "startup_legal_advisory_chris_justice_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 immigration_documentation_assistance_chris_justice = Service.create!(
   title: "Immigration Documentation Assistance",
   price: "10000 per hour",
@@ -651,7 +651,7 @@ immigration_documentation_assistance_chris_justice.photo.attach(
   filename: "immigration_documentation_assistance_chris_justice_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 dental_services_sam_smiles = Service.create!(
   title: "Comprehensive Dental Care",
   price: "20000 per visit",
@@ -668,7 +668,7 @@ dental_services_sam_smiles.photo.attach(
   filename: "dental_services_sam_smiles_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 cosmetic_dentistry_sam_smiles = Service.create!(
   title: "Cosmetic Dentistry",
   price: "20000 per procedure",
@@ -685,7 +685,7 @@ cosmetic_dentistry_sam_smiles.photo.attach(
   filename: "cosmetic_dentistry_sam_smiles_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 emergency_dental_services_sam_smiles = Service.create!(
   title: "Emergency Dental Services",
   price: "Fee varies on treatment",
@@ -702,7 +702,7 @@ emergency_dental_services_sam_smiles.photo.attach(
   filename: "emergency_dental_services_sam_smiles_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 photography_ava_shutter = Service.create!(
   title: "Professional Photography",
   price: "10000 per session",
@@ -719,7 +719,7 @@ photography_ava_shutter.photo.attach(
   filename: "photography_ava_shutter_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 wedding_photography_ava_shutter = Service.create!(
   title: "Wedding Photography",
   price: "30000 per event",
@@ -736,7 +736,7 @@ wedding_photography_ava_shutter.photo.attach(
   filename: "wedding_photography_ava_shutter_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 photography_lessons_ava_shutter = Service.create!(
   title: "Photography Lessons",
   price: "20000 per 4-session package",
@@ -753,7 +753,7 @@ photography_lessons_ava_shutter.photo.attach(
   filename: "photography_lessons_ava_shutter_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 accounting_lee_numbers = Service.create!(
   title: "Accounting and Financial Planning",
   price: "25000 per consultation",
@@ -770,7 +770,7 @@ accounting_lee_numbers.photo.attach(
   filename: "accounting_lee_numbers_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 personal_finance_consulting_lee_numbers = Service.create!(
   title: "Personal Finance Consulting",
   price: "15000 per consultation",
@@ -787,7 +787,7 @@ personal_finance_consulting_lee_numbers.photo.attach(
   filename: "personal_finance_consulting_lee_numbers_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 tax_return_assistance_lee_numbers = Service.create!(
   title: "Tax Return Assistance",
   price: "12000 per filing",
@@ -804,7 +804,7 @@ tax_return_assistance_lee_numbers.photo.attach(
   filename: "tax_return_assistance_lee_numbers_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 full_stack_dev_alex_taylor = Service.create!(
   title: "Full-stack Development",
   price: "50000 per ",
@@ -812,7 +812,7 @@ full_stack_dev_alex_taylor = Service.create!(
   schedule: "Mon to Fri, 10 AM - 7 PM",
   user: professional_alex_taylor,
   category: "Web Development, Mobile Applications, Software Engineering, Technology Solutions",
-  address: "4 Chome-8-7 Ginza, Tokyo"
+  address: "5 Chome-14-10 Sengoku, Bunkyo, Tokyo"
 )
 full_stack_dev_alex_taylor_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226239/profinder/photo-1629904853893-c2c8981a1dc5_hk9lzk.avif"
 full_stack_dev_alex_taylor_file = URI.open(full_stack_dev_alex_taylor_url)
@@ -823,7 +823,7 @@ full_stack_dev_alex_taylor.photo.attach(
 )
 
 puts "Still Making Service Seeds...."
-
+sleep(1)
 digital_marketing_morgan_bailey = Service.create!(
   title: "Digital Marketing Solutions",
   price: "20000 per campaign",
@@ -840,7 +840,7 @@ digital_marketing_morgan_bailey.photo.attach(
   filename: "digital_marketing_morgan_bailey_image",
   content_type: "image/avif"
 )
-
+sleep(1)
 graphic_design_christina_jones = Service.create!(
   title: "Graphic Design Services",
   price: "10000 per design",
@@ -857,7 +857,7 @@ graphic_design_christina_jones.photo.attach(
   filename: "graphic_design_christina_jones_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 freelance_writing_kim_parker = Service.create!(
   title: "Freelance Writing Services",
   price: "10000 per article",
@@ -874,7 +874,7 @@ freelance_writing_kim_parker.photo.attach(
   filename: "freelance_writing_kim_parker_image",
   content_type: "image/avif"
 )
-
+sleep(1)
 project_management_lee_jordan = Service.create!(
   title: "Comprehensive Project Management",
   price: "30000 per project", # Simplified flat rate pricing
@@ -891,7 +891,7 @@ project_management_lee_jordan.photo.attach(
   filename: "project_management_lee_jordan_image",
   content_type: "image/avif"
 )
-
+sleep(1)
 data_science_consulting_sam_rivera = Service.create!(
   title: "Data Science Consulting",
   price: "55000 per analysis",
@@ -908,7 +908,7 @@ data_science_consulting_sam_rivera.photo.attach(
   filename: "data_science_consulting_sam_rivera_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 cybersecurity_taylor_green = Service.create!(
   title: "Cybersecurity Consultation Services",
   price: "12000 per hour", # Clear hourly rate
@@ -925,7 +925,7 @@ cybersecurity_taylor_green.photo.attach(
   filename: "cybersecurity_taylor_green_image",
   content_type: "image/avif"
 )
-
+sleep(1)
 mobile_app_dev_jordan_casey = Service.create!(
   title: "Mobile App Development",
   price: "75000 per app",
@@ -942,7 +942,7 @@ mobile_app_dev_jordan_casey.photo.attach(
   filename: "mobile_app_dev_jordan_casey_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 startup_consulting_casey_lee = Service.create!(
   title: "Startup Consulting",
   price: "30000 per consultation",
@@ -959,7 +959,7 @@ startup_consulting_casey_lee.photo.attach(
   filename: "startup_consulting_casey_lee_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 ui_ux_design_alex_morgan = Service.create!(
   title: "UI/UX Design Services",
   price: "40000 per project",
@@ -976,7 +976,7 @@ ui_ux_design_alex_morgan.photo.attach(
   filename: "ui_ux_design_alex_morgan_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 personal_training_jordan_flex = Service.create!(
   title: "Personal Training",
   price: "10000 per session",
@@ -993,7 +993,7 @@ personal_training_jordan_flex.photo.attach(
   filename: "personal_training_jordan_flex_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 nutrition_coaching_jordan_flex = Service.create!(
   title: "Nutrition Coaching",
   price: "8000 per consultation",
@@ -1010,7 +1010,7 @@ nutrition_coaching_jordan_flex.photo.attach(
   filename: "nutrition_coaching_jordan_flex_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 general_health_checkups = Service.create!(
   title: "General Health Checkups",
   price: "12000 (Health insurance accepted)",
@@ -1018,7 +1018,7 @@ general_health_checkups = Service.create!(
   schedule: "Weekdays, 9 AM - 5 PM",
   user: professional_dr_emily_hart,
   category: "Routine Checkup, Disease Prevention, Health Monitoring, Lifestyle Guidance",
-  address: "7 Chome-9-1 Ueno, Tokyo"
+  address: "3 Chome-8-6 Komagome, Toshima, Tokyo"
 )
 general_health_checkups_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253986/profinder/photo-1576766125535-b04e15fd0273_g5fuku.avif"
 general_health_checkups_file = URI.open(general_health_checkups_url)
@@ -1027,7 +1027,7 @@ general_health_checkups.photo.attach(
   filename: "general_health_checkups_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 comprehensive_health_screenings = Service.create!(
   title: "Comprehensive Health Screenings",
   price: "15000 (Health insurance accepted)",
@@ -1035,7 +1035,7 @@ comprehensive_health_screenings = Service.create!(
   schedule: "Weekdays, 9 AM - 4 PM",
   user: professional_dr_emily_hart,
   category: "Preventative Care, Health Screening, Risk Assessment, Lifestyle Advice",
-  address: "7 Chome-9-1 Ueno, Tokyo"
+  address: "3 Chome-8-6 Komagome, Toshima, Tokyo"
 )
 comprehensive_health_screenings_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253904/profinder/photo-1505751172876-fa1923c5c528_ypizoc.avif"
 comprehensive_health_screenings_file = URI.open(comprehensive_health_screenings_url)
@@ -1045,7 +1045,7 @@ comprehensive_health_screenings.photo.attach(
   content_type: "image/avif"
 )
 puts "Nearly Done With Service Seeds..."
-
+sleep(1)
 rental_assistance_for_foreigners = Service.create!(
   title: "Rental Assistance for Foreigners",
   price: "Free Consultation",
@@ -1053,7 +1053,7 @@ rental_assistance_for_foreigners = Service.create!(
   schedule: "By appointment",
   user: professional_mia_tanaka,
   category: "Rentals, Leasing Assistance, Negotiation, Contract Explanation",
-  address: "3 Chome-8-6 Komagome, Toshima, Tokyo"
+  address: "6 Chome-12-3 Roppongi, Minato, Tokyo"
 )
 rental_assistance_for_foreigners_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709254453/profinder/premium_photo-1661775953246-410e3a33977c_gam9ox.avif"
 rental_assistance_for_foreigners_file = URI.open(rental_assistance_for_foreigners_url)
@@ -1062,7 +1062,7 @@ rental_assistance_for_foreigners.photo.attach(
   filename: "rental_assistance_for_foreigners_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 home_purchase_consultation = Service.create!(
   title: "Home Purchase Consultation",
   price: "Free Consultation",
@@ -1079,14 +1079,15 @@ home_purchase_consultation.photo.attach(
   filename: "home_purchase_consultation_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 personalized_japanese_language_lessons = Service.create!(
   title: "Personalized Japanese Language Lessons",
   price: "5000 per hour",
   description: "Customized Japanese language lessons tailored to your learning style and goals. From beginner to advanced levels, improve your language skills effectively with one-on-one instruction.",
   schedule: "Flexible scheduling available",
   user: professional_akira_sato,
-  category: "Language Learning, Personalized Instruction, All Levels, One-on-One Lessons"
+  category: "Language Learning, Personalized Instruction, All Levels, One-on-One Lessons",
+  address: "1 Chome-5-7 Nishi-Shinjuku, Tokyo"
 )
 personalized_japanese_language_lessons_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709254947/profinder/photo-1511342802705-a7b79a427eb5_aldoi6.avif"
 personalized_japanese_language_lessons_file = URI.open(personalized_japanese_language_lessons_url)
@@ -1095,7 +1096,7 @@ personalized_japanese_language_lessons.photo.attach(
   filename: "personalized_japanese_language_lessons_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 business_japanese_and_cultural_etiquette = Service.create!(
   title: "Business Japanese and Cultural Etiquette",
   price: "6000 per hour",
@@ -1112,7 +1113,7 @@ business_japanese_and_cultural_etiquette.photo.attach(
   filename: "business_japanese_and_cultural_etiquette_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 schooling_options_consultation = Service.create!(
   title: "Schooling Options Consultation for Expatriate Families",
   price: "25000 per consultation",
@@ -1129,7 +1130,7 @@ schooling_options_consultation.photo.attach(
   filename: "schooling_options_consultation_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 investment_planning_strategy = Service.create!(
   title: "Investment Planning and Strategy",
   price: "30000 per session",
@@ -1146,7 +1147,7 @@ investment_planning_strategy.photo.attach(
   filename: "investment_planning_strategy_image.avif",
   content_type: "image/avif"
 )
-
+sleep(1)
 tax_optimization_filing_assistance = Service.create!(
   title: "Tax Optimization and Filing Assistance",
   price: "20000 per session",
@@ -1482,7 +1483,7 @@ review_kim_parker_full_stack_dev = Review.create!(
   # file = URI.open(photo_url)
   # user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 # end
-
+sleep(1)
 # immigration_guidance = Service.create!(title: "Immigration Procedure Guidance",
 #   price: ["10000 per a hour", "20000 per a hour", "30000 per a hour"].sample,
 #   description: "I've been advising and representing clients in criminal or civil proceedings and in other legal matters for more than 20 years in Japan.",
@@ -1490,7 +1491,7 @@ review_kim_parker_full_stack_dev = Review.create!(
 #   category: ["Attorney", "Law", "Lawyer"].sample,
 #   user: User.all.sample
 #   )
-
+sleep(1)
 # teeth_whitening = Service.create!(title: "Tooth Whitening",
 #   price: ["5000 per a session", "10000 per a session", "20000 per a session"].sample,
 #   description: "Making your smile ten times brighter.",
@@ -1498,7 +1499,7 @@ review_kim_parker_full_stack_dev = Review.create!(
 #   category: ["Dentist","Oral Hygene", "Beauty Clinic"].sample,
 #   user: User.all.sample
 #   )
-
+sleep(1)
 # catering = Service.create!(title: "Catering",
 #   price: ["5000 per an event", "10000 per an event", "20000 per an event"].sample,
 #   description: "Delivering something delicious to everywhere",
@@ -1506,7 +1507,7 @@ review_kim_parker_full_stack_dev = Review.create!(
 #   category: ["Cooking", "Partying", "Meal Preparation"].sample,
 #   user: User.all.sample
 #   )
-
+sleep(1)
 # real_estate = Service.create!(title: "Real Estate",
 #   price: "Free of Charge",
 #   description: "Introducing your new home in Japan",
