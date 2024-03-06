@@ -176,22 +176,41 @@ p photo_url = "https://this-person-does-not-exist.com#{src}"
 file = URI.open(photo_url)
 professional_ava_shutter.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-professional_lee_numbers = User.create!(
-  username: "LeeNumbers",
-  email: "leenumbers@example.com",
+professional_tanaka_sousuke = User.create!(
+  username: "tanakasousuke",
+  email: "tanakasousuke@example.com",
   password: "123456",
   phonenumber: "03-3226-0505",
-  linkedin_profile: "https://www.linkedin.com/in/leenumbers",
+  linkedin_profile: "https://www.linkedin.com/in/tanakasousuke",
   bio: "Detail-oriented accountant with expertise in tax planning and financial analysis. Helping businesses and individuals achieve financial health.",
-  contact_email: "lee@numbersaccounting.com",
-  website_url: "https://leenumbers.accountant"
+  contact_email: "tanaka@sousukeaccounting.com",
+  website_url: "https://tanakasousuke.accountant"
 )
 url = "https://this-person-does-not-exist.com/new?gender=male&age=#{age}&etnic=asian"
 json = URI.open(url).string
 src = JSON.parse(json)['src']
 p photo_url = "https://this-person-does-not-exist.com#{src}"
 file = URI.open(photo_url)
-professional_lee_numbers.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+professional_tanaka_sousuke.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
+professional_haruki_matsuda = User.create!(
+  username: "HarukiMatsuda",
+  email: "harukimatsuda@example.com",
+  password: "123456",
+  phonenumber: "03-3344-5567",
+  linkedin_profile: "https://www.linkedin.com/in/harukimatsuda",
+  bio: "Experienced mover with over a decade of helping families relocate smoothly. Specializing in efficient, stress-free moves.",
+  contact_email: "matsuda@movingexperts.jp",
+  website_url: "https://harukimatsuda.moving"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=#{age}&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+p photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_haruki_matsuda.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
+
 professional_alex_taylor = User.create!(
   username: "AlexTaylor",
   email: "alextaylor@example.com",
@@ -754,56 +773,74 @@ photography_lessons_ava_shutter.photo.attach(
   content_type: "image/avif"
 )
 sleep(1)
-accounting_lee_numbers = Service.create!(
+accounting_tanaka_sousuke = Service.create!(
   title: "Accounting and Financial Planning",
   price: "25000 per consultation",
   description: "Detail-oriented accountant with expertise in tax planning and financial analysis. Helping businesses and individuals achieve financial health.",
   schedule: "Mon to Fri, 9 AM - 4 PM",
-  user: professional_lee_numbers,
-  category: "Accounting, Tax Planning, Financial Analysis, Consultation",
+  user: professional_tanaka_sousuke,
+  category: "Accounting, Tax Planning, Finance Analysis, Consultation",
   address: "6 Chome-10-2 Roppongi, Minato, Tokyo"
 )
-accounting_lee_numbers_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226014/profinder/photo-1457904375453-3e1fc2fc76f4_gs4ebe.avif"
-accounting_lee_numbers_file = URI.open(accounting_lee_numbers_url)
-accounting_lee_numbers.photo.attach(
-  io: accounting_lee_numbers_file,
-  filename: "accounting_lee_numbers_image.avif",
+accounting_tanaka_sousuke_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226014/profinder/photo-1457904375453-3e1fc2fc76f4_gs4ebe.avif"
+accounting_tanaka_sousuke_file = URI.open(accounting_tanaka_sousuke_url)
+accounting_tanaka_sousuke.photo.attach(
+  io: accounting_tanaka_sousuke_file,
+  filename: "accounting_tanaka_sousuke_image.avif",
   content_type: "image/avif"
 )
 sleep(1)
-personal_finance_consulting_lee_numbers = Service.create!(
-  title: "Personal Finance Consulting",
+personal_financial_consulting_tanaka_sousuke = Service.create!(
+  title: "Personal Financial Consulting",
   price: "15000 per consultation",
-  description: "Gain control over your finances with expert advice from Lee Numbers. Offering personalized consulting on budgeting, saving, investing, and tax planning.",
+  description: "Gain control over your finances with expert advice from Tanaka Sousuke. Offering personalized consulting on budgeting, saving, investing, and tax planning.",
   schedule: "Weekdays 9 AM to 4 PM",
-  user: professional_lee_numbers,
+  user: professional_tanaka_sousuke,
   category: "Budgeting, Saving, Investing, Tax Planning",
   address: "6 Chome-10-2 Roppongi, Minato, Tokyo"
 )
-personal_finance_consulting_lee_numbers_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253055/profinder/premium_photo-1661775845874-a3722dfb75b9_jbev01.avif"
-personal_finance_consulting_lee_numbers_file = URI.open(personal_finance_consulting_lee_numbers_url)
-personal_finance_consulting_lee_numbers.photo.attach(
-  io: personal_finance_consulting_lee_numbers_file,
-  filename: "personal_finance_consulting_lee_numbers_image.avif",
+personal_financial_consulting_tanaka_sousuke_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253055/profinder/premium_photo-1661775845874-a3722dfb75b9_jbev01.avif"
+personal_financial_consulting_tanaka_sousuke_file = URI.open(personal_financial_consulting_tanaka_sousuke_url)
+personal_financial_consulting_tanaka_sousuke.photo.attach(
+  io: personal_financial_consulting_tanaka_sousuke_file,
+  filename: "personal_financial_consulting_tanaka_sousuke_image.avif",
   content_type: "image/avif"
 )
 sleep(1)
-tax_return_assistance_lee_numbers = Service.create!(
+tax_return_assistance_tanaka_sousuke = Service.create!(
   title: "Tax Return Assistance",
   price: "12000 per filing",
-  description: "Simplify your tax season with professional tax return assistance from Lee Numbers. From personal filings to small business taxes, ensure accuracy and maximize your returns.",
+  description: "Simplify your tax season with professional tax return assistance from Tanaka Sousuke. From personal filings to small business taxes, ensure accuracy and maximize your returns.",
   schedule: "January - April, Weekdays 9 AM to 6 PM",
-  user: professional_lee_numbers,
+  user: professional_tanaka_sousuke,
   category: "Tax Filing, Tax Optimization, Small Business Taxes, Personal Taxes",
   address: "6 Chome-10-2 Roppongi, Minato, Tokyo"
 )
-tax_return_assistance_lee_numbers_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253198/profinder/premium_photo-1679923913530-16c91821a213_dmei8k.avif"
-tax_return_assistance_lee_numbers_file = URI.open(tax_return_assistance_lee_numbers_url)
-tax_return_assistance_lee_numbers.photo.attach(
-  io: tax_return_assistance_lee_numbers_file,
-  filename: "tax_return_assistance_lee_numbers_image.avif",
+tax_return_assistance_tanaka_sousuke_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709253198/profinder/premium_photo-1679923913530-16c91821a213_dmei8k.avif"
+tax_return_assistance_tanaka_sousuke_file = URI.open(tax_return_assistance_tanaka_sousuke_url)
+tax_return_assistance_tanaka_sousuke.photo.attach(
+  io: tax_return_assistance_tanaka_sousuke_file,
+  filename: "tax_return_assistance_tanaka_sousuke_image.avif",
   content_type: "image/avif"
 )
+
+house_moving_service_haruki_matsuda = Service.create!(
+  title: "House Moving Services",
+  price: "Contact for quote",
+  description: "Make your next move hassle-free with our professional moving services. From packing to transportation, we ensure your belongings are safely moved to your new home.",
+  schedule: "Available by appointment",
+  user: professional_haruki_matsuda,
+  category: "Moving, Relocation, Packing, Transportation",
+  address: "2 Chome-11-3 Nishi-Shinjuku, Shinjuku-ku, Tokyo"
+)
+house_moving_service_haruki_matsuda_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709695460/profinder/1269a1eb3876359e12db52fb253c0c8ea760ac9b_is8npy.webp"
+house_moving_service_haruki_matsuda_file = URI.open(house_moving_service_haruki_matsuda_url)
+house_moving_service_haruki_matsuda.photo.attach(
+  io: house_moving_service_haruki_matsuda_file,
+  filename: "house_moving_service_haruki_matsuda_image.avif",
+  content_type: "image/avif"
+)
+
 sleep(1)
 full_stack_dev_alex_taylor = Service.create!(
   title: "Full-stack Development",
@@ -949,7 +986,7 @@ startup_consulting_casey_lee = Service.create!(
   description: "Strategic startup consulting services to help entrepreneurs navigate the complexities of launching and growing a successful business.",
   schedule: "By appointment",
   user: professional_casey_lee,
-  category: "Business Strategy, Financial Planning, Market Analysis, Growth Hacking",
+  category: "Business Strategy, Finance Planning, Market Analysis, Growth Hacking",
   address: "2 Chome-18-5 Ebisu, Shibuya, Tokyo"
 )
 startup_consulting_casey_lee_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709226923/profinder/photo-1556761175-5973dc0f32e7_vdenan.avif"
@@ -1450,10 +1487,117 @@ review_kim_parker_full_stack_dev = Review.create!(
   service: full_stack_dev_alex_taylor
 )
 
+review_dan_chin_accounting_tanaka_sousuke = Review.create!(
+  rating: 5,
+  comment: "Mr. Tanaka's guidance on tax planning was invaluable. His English proficiency made communication seamless.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: accounting_tanaka_sousuke
+)
 
+review_jane_doe_accounting_tanaka_sousuke = Review.create!(
+  rating: 4,
+  comment: "Received excellent financial advice. Mr. Tanaka speaks fluent English, which was a great help.",
+  eng_rating: 4,
+  user: user_jane_doe,
+  service: accounting_tanaka_sousuke
+)
 
+review_john_smith_accounting_tanaka_sousuke = Review.create!(
+  rating: 5,
+  comment: "Tanaka's expertise in financial analysis is top-notch. His ability to explain complex issues in English is impressive.",
+  eng_rating: 5,
+  user: user_john_smith,
+  service: accounting_tanaka_sousuke
+)
 
+review_professional_ava_shutter_accounting_tanaka_sousuke = Review.create!(
+  rating: 5,
+  comment: "Sousuke's accounting services are thorough and reliable. Communicates clearly in English, making financial matters easier to understand.",
+  eng_rating: 5,
+  user: professional_ava_shutter,
+  service: accounting_tanaka_sousuke
+)
 
+review_professional_mia_tanaka_accounting_tanaka_sousuke = Review.create!(
+  rating: 5,
+  comment: "His detailed approach to tax planning saved my business a lot. His proficiency in English is commendable.",
+  eng_rating: 5,
+  user: professional_mia_tanaka,
+  service: accounting_tanaka_sousuke
+)
+
+review_professional_jordan_flex_accounting_tanaka_sousuke = Review.create!(
+  rating: 4,
+  comment: "Efficient and effective service. Tanaka san is a true professional.",
+  eng_rating: 5,
+  user: professional_jordan_flex,
+  service: accounting_tanaka_sousuke
+)
+
+review_professional_akira_sato_accounting_tanaka_sousuke = Review.create!(
+  rating: 5,
+  comment: "Highly recommend Mr. Tanaka for anyone needing accounting services. Very clear communication.",
+  eng_rating: 5,
+  user: professional_akira_sato,
+  service: accounting_tanaka_sousuke
+)
+
+review_dan_chin_house_moving_service = Review.create!(
+  rating: 5,
+  comment: "Haruki's team made our move stress-free. Everything was handled with care. His English was very good, making communication easy.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: house_moving_service_haruki_matsuda
+)
+
+review_jane_doe_house_moving_service = Review.create!(
+  rating: 4,
+  comment: "Very professional and efficient moving service. Haruki speaks English fluently, which was a big help.",
+  eng_rating: 4,
+  user: user_jane_doe,
+  service: house_moving_service_haruki_matsuda
+)
+
+review_john_smith_house_moving_service = Review.create!(
+  rating: 5,
+  comment: "Haruki's moving service is top-notch. Quick and careful with our belongings. Plus, his English communication skills were excellent.",
+  eng_rating: 5,
+  user: user_john_smith,
+  service: house_moving_service_haruki_matsuda
+)
+
+review_lee_jordan_house_moving_service = Review.create!(
+  rating: 5,
+  comment: "I'm impressed by the efficiency and care of Haruki's moving service. Fluent English made coordinating a breeze.",
+  eng_rating: 5,
+  user: professional_lee_jordan,
+  service: house_moving_service_haruki_matsuda
+)
+
+review_sam_rivera_house_moving_service = Review.create!(
+  rating: 4,
+  comment: "The moving service provided by Haruki was very good. Managed everything timely and with care.",
+  eng_rating: 4,
+  user: professional_sam_rivera,
+  service: house_moving_service_haruki_matsuda
+)
+
+review_akira_sato_investment_planning = Review.create!(
+  rating: 5,
+  comment: "Hiroshi's investment advice has been invaluable for understanding the Japanese market. His insights have helped me make informed decisions.",
+  eng_rating: 4,
+  user: professional_akira_sato,
+  service: investment_planning_strategy
+)
+
+review_mia_tanaka_startup_consulting = Review.create!(
+  rating: 4,
+  comment: "Casey's guidance on launching my startup in Japan was crucial. Her understanding of the market and strategic advice has set me on the right path.",
+  eng_rating: 5,
+  user: professional_mia_tanaka,
+  service: startup_consulting_casey_lee
+)
 
 
 
@@ -1483,7 +1627,7 @@ review_kim_parker_full_stack_dev = Review.create!(
   # file = URI.open(photo_url)
   # user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 # end
-sleep(1)
+
 # immigration_guidance = Service.create!(title: "Immigration Procedure Guidance",
 #   price: ["10000 per a hour", "20000 per a hour", "30000 per a hour"].sample,
 #   description: "I've been advising and representing clients in criminal or civil proceedings and in other legal matters for more than 20 years in Japan.",
@@ -1491,7 +1635,7 @@ sleep(1)
 #   category: ["Attorney", "Law", "Lawyer"].sample,
 #   user: User.all.sample
 #   )
-sleep(1)
+
 # teeth_whitening = Service.create!(title: "Tooth Whitening",
 #   price: ["5000 per a session", "10000 per a session", "20000 per a session"].sample,
 #   description: "Making your smile ten times brighter.",
@@ -1499,7 +1643,7 @@ sleep(1)
 #   category: ["Dentist","Oral Hygene", "Beauty Clinic"].sample,
 #   user: User.all.sample
 #   )
-sleep(1)
+
 # catering = Service.create!(title: "Catering",
 #   price: ["5000 per an event", "10000 per an event", "20000 per an event"].sample,
 #   description: "Delivering something delicious to everywhere",
@@ -1507,7 +1651,7 @@ sleep(1)
 #   category: ["Cooking", "Partying", "Meal Preparation"].sample,
 #   user: User.all.sample
 #   )
-sleep(1)
+
 # real_estate = Service.create!(title: "Real Estate",
 #   price: "Free of Charge",
 #   description: "Introducing your new home in Japan",
