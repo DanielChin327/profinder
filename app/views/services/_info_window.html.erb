@@ -1,12 +1,12 @@
-
-<div class="mapbox-card">
+<div class="mapbox-card" >
   <% unless service.id == params[:id].to_i%>
-  <%= link_to "",  service_path(service), class: "map-box-card-link"%>
+    <%= link_to "",  service_path(service), class: "map-box-card-link"%>
   <%end%>
   <%= cl_image_tag(service.photo.key, class: "mapboxgl-popup-image w-100") %>
- <div class="mapboxgl-info">
-   <p style="font-size: larger;"><b><%= service.title %></b></p>
-     <div><p><%= service.address%></p></div>
-
- </div>
+  <div class="mapboxgl-info">
+    <p style="font-size: larger;"><b><%= service.title %></b></p>
+    <div>
+      <p><%= service.address%></p>
+    </div>
+  </div>
 </div>

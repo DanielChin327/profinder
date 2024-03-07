@@ -21,7 +21,7 @@ $darkGrey: #4f585e;
 // }
 
 a.top-card-button {
-  background: $teal;
+  background: $purple;
   border-radius: 4px;
 	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
   color: $white;
@@ -33,7 +33,7 @@ a.top-card-button {
 }
 
 .no-touch a.top-card-button:hover {
-  background: lighten($teal,2.5);
+  background: lighten($purple,2.5);
   box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
   transform: translateY(-2px);
   transition: all 0.25s 0s ease-out;
@@ -48,7 +48,7 @@ a.top-card-button:active {
 }
 
 div.top-cards {
-  margin: 80px auto;
+  margin: 10px auto;
   max-width: 960px;
   text-align: center;
   display: flex;
