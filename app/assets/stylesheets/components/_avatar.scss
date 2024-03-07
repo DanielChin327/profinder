@@ -29,3 +29,11 @@
   border-radius: 10px;
   border-radius: 50%;
 }
+
+.avatar-marker {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  outline: 2px solid $aqua;
+}

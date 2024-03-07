@@ -1,0 +1,5 @@
+<% if user.photo.attached? %>
+<%= cl_image_tag user.photo.key, class: "avatar-marker" %>
+<% else %>
+<%= image_tag "icon.png", class: "avatar-marker" %>
+<% end %>

@@ -13,16 +13,13 @@
           <% end %>
         </div>
         <h1><%= @service.title%></h1>
-
-
         <div class="show_star_rating">
           <p><%= render "shared/star_icon_rating", rating: @service_rating,  name: "Service: " %></p>
           <p><%= render "shared/star_icon_rating", rating: @eng_rating, name: "English: "%></p>
         </div>
-
         <div class="info"><i class="fa-solid fa-yen-sign me-2"></i><%= @service.price%> </div>
         <div class="info"> <i class="fa-solid fa-calendar-days me-2"></i> <%=@service.schedule%> </span></div>
-         <div class="info"> <i class="fa-solid fa-location-dot"></i> <%=@service.address%></div>
+      <div class="info"> <i class="fa-solid fa-location-dot"></i> <%=@service.address%></div>
       <div class="text"><%= @service.description%> </div>
       <div class="container">
         <div class="row">
@@ -56,8 +53,14 @@
       <div class="info"><i class="fa-solid fa-phone pe-2"></i> <%= @service.user.phonenumber%></div>
       <div class="info"> <i class="fa-solid fa-location-dot"></i> <%=@service.address%></div>
       <a href="<%= @service.user.linkedin_profile %>"> <i class="fa-brands fa-linkedin pe-2" style="color:black;"></i> <%= @service.user.linkedin_profile %></a>
-      <h3 class="bio-title my-3">Bio</h3>
+      <h3 class="bio-title my-4">Bio</h3>
       <div class="text"><%= @service.user.bio%> </div>
+      <div class="user-card-container">
+        <h3 class="bio-title my-4">Other Services</h3>
+        <div class="user-card-scroll-box">
+          <%= render "services/user_card" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

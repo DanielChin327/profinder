@@ -35,7 +35,7 @@ z-index: 1
 .map-container-index {
   position: sticky !important;
   top: 0;
-  flex: 1; height: 100vh;
+  flex: 1; height: calc(100vh - 54px - 134px);
 }
 
 .mapboxgl-info {

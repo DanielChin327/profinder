@@ -4,10 +4,15 @@
   border-radius: 5px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
   text-align: center;
+  height: 55vh;
 }
 h2 {
   padding: 1rem;
   margin: 0;
+}
+.list-group{
+  height: 380px;
+  overflow: scroll;
 }
 
 .list-group-item {

@@ -18,6 +18,11 @@ class ServicesController < ApplicationController
         marker_html: render_to_string(partial: "map_marker", locals: {service: service}),
       }
     end
+    @marker << {
+      lat: current_user.latitude,
+      lng: current_user.longitude,
+      marker_html: render_to_string(partial: "users/map_marker", locals: {user: current_user}),
+    } if current_user
   end
 
   def new
@@ -40,6 +45,7 @@ class ServicesController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @service = Service.find(params[:id])
+    @services=@service.user.services
     if current_user #checks if user is logged in. Required to to be able see Service Show without logging in.
       @is_bookmarked = current_user.bookmarks.exists?(service_id: @service.id)
     else
