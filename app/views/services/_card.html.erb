@@ -1,16 +1,17 @@
 <div class="card-container">
   <div class="card-scroll-box">
-    <% @services.each do |service| %>
-      <%= link_to service_path(service), class: 'card-product-link' do %>
-        <div class="card-product p-2">
-          <%= cl_image_tag(service.photo.key, class: 'card-product-image') %>
-          <div class="card-product-infos">
-            <h2><%= service.title %></h2>
-            <div class="tags-container">
-              <% service.category.split(",").each do |category|%>
-                <span class="tag"><%= category %></span>
-              <% end %>
-            </div>
+  <% @services.each do |service| %>
+    <%= link_to service_path(service), class: 'card-product-link', onmouseover: "document.getElementById(#{service.id}).click()" do %>
+      <div class="card-product p-2">
+        <%= cl_image_tag(service.photo.key, class: 'card-product-image') %>
+        <div class="card-product-infos">
+          <h2><%= service.title %></h2>
+          <div class="tags-container">
+            <% service.category.split(",").each do |category|%>
+              <span class="tag"><%= category %></span>
+            <% end %>
+             </div>
+
           </div>
           <div class="card-image-price d-flex flex-column align-items-center">
             <% if service.user.photo.attached? %>
