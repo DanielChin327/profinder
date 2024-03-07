@@ -11,17 +11,19 @@
         <%= link_to "Show All", services_path, class: "button-light" %>
       </div>
     <% end %>
-    <div class="category-pills d-flex" >
-      <% #["Finance", "Moving", "Accounting", "Consulting"].each do |category| %>
-        <%@services.pluck(:category).map {|categories| categories.split(", ")}.flatten.uniq.first(15).each do |category|%>
-          <%#= link_to services_path, class: 'card-product-link' do %>
-            <%= form_with url: services_path, method: :get do %>
-              <%= hidden_field_tag :query, category %>
-              <%= submit_tag category, name: "", class: "tag" %>
-              <!-- <span class="tag"><%= category %></span> -->
+    <div class="fade-container">
+      <div class="category-pills d-flex" >
+        <% #["Finance", "Moving", "Accounting", "Consulting"].each do |category| %>
+          <%@services.pluck(:category).map {|categories| categories.split(", ")}.flatten.uniq.first(15).each do |category|%>
+            <%#= link_to services_path, class: 'card-product-link' do %>
+              <%= form_with url: services_path, method: :get do %>
+                <%= hidden_field_tag :query, category %>
+                <%= submit_tag category, name: "", class: "tag" %>
+                <!-- <span class="tag"><%= category %></span> -->
+              <% end %>
+              <%# end %>
             <% end %>
-            <%# end %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>

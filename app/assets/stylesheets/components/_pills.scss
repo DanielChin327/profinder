@@ -3,6 +3,8 @@
   overflow: scroll;
   text-wrap: nowrap;
   height: 36px;
+  padding-left: 16px;
+
 
   .tag {
     font-size: 14px;
@@ -20,6 +22,31 @@
               //linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) right;
   //background-repeat: no-repeat;
   //background-size: 20% 100%, 20% 100%;
+}
+.fade-container{
+  position: relative;
+}
+.fade-container::after {
+  width:50px;
+  content:'';
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  background: linear-gradient(to right, $body-bg 0%,rgba(255,255,255,0) 69%);
+  height:100%;
+
+}
+.fade-container::before {
+  width:50px;
+  content:'';
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  background: linear-gradient(to left, $body-bg 0%,rgba(255,255,255,0) 69%);
+  height:100%;
+
 }
 //input[type="submit"] {
   //appearance: none;
