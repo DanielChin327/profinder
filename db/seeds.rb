@@ -10,7 +10,7 @@ Booking.destroy_all
 puts "Creating users..."
 
 age = rand(25..60).to_s
-ethnicity = 'all'
+ethnicity = 'asian'
 # USER ACCOUNTS...
 user_dan_chin = User.create!(
   username: "DanChin",
