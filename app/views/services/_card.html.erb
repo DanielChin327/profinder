@@ -1,6 +1,6 @@
 <div class="card-container">
   <% @services.each do |service| %>
-    <%= link_to service_path(service), class: 'card-product-link' do %>
+    <%= link_to service_path(service), class: 'card-product-link', onmouseover: "document.getElementById(#{service.id}).click()" do %>
       <div class="card-product p-2">
         <%= cl_image_tag(service.photo.key, class: 'card-product-image') %>
         <div class="card-product-infos">
