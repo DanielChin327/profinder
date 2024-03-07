@@ -6,8 +6,7 @@
     <%= f.input :end_date,
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
-    <div class="d-flex justify-content-between">
-      <%= link_to "Cancel", services_path, class: 'btn btn-secondary text-decoration-none' %>
+    <div class="d-flex justify-content-center">
       <%= f.button :submit, class: 'btn btn-primary' %>
     </div>
   <% end %>
