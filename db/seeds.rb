@@ -79,6 +79,339 @@ user_john_smith.photo.attach(io: file, filename: 'user.png', content_type: 'imag
 
 # PROFESSIONAL USER ACCOUNTS...
 
+professional_ayumi_takahashi = User.create!(
+  username: "AyumiTakahashi",
+  email: "ayumitakahashi@example.com",
+  password: "123456",
+  phonenumber: "03-3456-7890",
+  linkedin_profile: "https://www.linkedin.com/in/ayumitakahashi",
+  bio: "Certified tax consultant with a focus on providing comprehensive tax planning and filing services for expatriates living in Japan. Expertise in international tax law to optimize your tax position.",
+  contact_email: "ayumi@takahashitax.com",
+  website_url: "https://takahashitax.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=female&age=40&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_ayumi_takahashi.photo.attach(io: file, filename: 'ayumi_takahashi.png', content_type: 'image/png')
+
+sleep(1)
+min = 35.71722
+max =  35.74280
+min2 = 139.70200
+max2 = 139.72484
+expatriate_tax_consultation_ayumi = Service.create!(
+  title: "Ayumi's Expatriate Tax Consultation",
+  price: "20000 per session",
+  description: "Navigate Japan's tax landscape with ease. I offer personalized tax consultation and filing services tailored to the unique needs of expatriates. Ensure compliance and optimize your tax situation with expert advice.",
+  schedule: "Weekdays, 9 AM to 5 PM",
+  user: professional_ayumi_takahashi,
+  category: "Expatriate Finance, Tax Consultation, International Tax Law",
+  address: "3 Chome-12-9 Toshima, Toshima City, Tokyo 132-0013",
+  latitude: rand(min..max),
+  longitude: rand(min2..max2)
+)
+expatriate_tax_consultation_ayumi_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709789414/profinder/istockphoto-1416399964-612x612_esd47o.jpg"
+expatriate_tax_consultation_ayumi_file = URI.open(expatriate_tax_consultation_ayumi_url)
+expatriate_tax_consultation_ayumi.photo.attach(
+  io: expatriate_tax_consultation_ayumi_file,
+  filename: "expatriate_tax_consultation_ayumi.jpg",
+  content_type: "image/jpeg"
+)
+
+review_dan_chin_ayumi_finance = Review.create!(
+  rating: 3,
+  comment: "Ayumi's tax consultation service fit what I was looking for. Her deep understanding of both Japanese and international tax laws made my tax filing process stress-free. She provided clear guidance in English, which was crucial for me as an expat. Her professionalism and thorough approach to tax planning have saved me a significant amount in taxes. Highly recommended for any expatriates struggling with their tax situation in Japan.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: expatriate_tax_consultation_ayumi
+)
+
+professional_hiroki_nakamura = User.create!(
+  username: "HirokiNakamura",
+  email: "hirokinakamura@example.com",
+  password: "123456",
+  phonenumber: "03-6677-8899",
+  linkedin_profile: "https://www.linkedin.com/in/hirokinakamura",
+  bio: "Innovative financial analyst with expertise in market trends, investment opportunities, and economic strategies tailored for the expatriate community in Japan. I’m here to help you make informed decisions that align with your financial goals.",
+  contact_email: "hiroki@nakamurafinancial.com",
+  website_url: "https://nakamurafinancial.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=35&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_hiroki_nakamura.photo.attach(io: file, filename: 'hiroki_nakamura.png', content_type: 'image/png')
+
+sleep(1)
+market_insight_consultation_hiroki = Service.create!(
+  title: "Hiroki's Market Insight and Finance Consultation",
+  price: "25000 per session",
+  description: "Gain unparalleled insights into Japan's financial market with Hiroki Nakamura. From identifying robust investment opportunities to understanding the latest market trends, my service is designed to equip expatriates with the knowledge to thrive financially in Japan.",
+  schedule: "Weekdays, 10 AM to 6 PM",
+  user: professional_hiroki_nakamura,
+  category: "Market Analysis, Finance Consulting, Expatriate Advising",
+  address: "5 Chome-11-2 Minato, Tokyo 108-0075"
+)
+market_insight_consultation_hiroki_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709789814/profinder/istockphoto-516011106-612x612_dgx2dn.jpg"
+market_insight_consultation_hiroki_file = URI.open(market_insight_consultation_hiroki_url)
+market_insight_consultation_hiroki.photo.attach(
+  io: market_insight_consultation_hiroki_file,
+  filename: "market_insight_consultation_hiroki.jpg",
+  content_type: "image/jpeg"
+)
+
+review_dan_chin_hiroki_finance = Review.create!(
+  rating: 5,
+  comment: "Hiroki's consultation opened my eyes to several lucrative investment avenues within Japan's unique market environment. His detailed analysis and understanding of economic indicators have been invaluable. Moreover, his ability to explain complex financial concepts in English has made planning my investments much more accessible. A must-have service for any expat serious about investing in Japan.",
+  eng_rating: 5,
+  user: user_dan_chin,
+  service: market_insight_consultation_hiroki
+)
+
+professional_yumi_fujita = User.create!(
+  username: "YumiFujita",
+  email: "yumifujita@example.com",
+  password: "123456",
+  phonenumber: "03-5597-8844",
+  linkedin_profile: "https://www.linkedin.com/in/yumifujita",
+  bio: "Expert in personal financial planning and estate management with a passion for helping expatriates in Japan secure their financial future. With over 15 years of experience, I offer personalized advice to ensure your wealth grows and is protected.",
+  contact_email: "contact@fujitafinancial.com",
+  website_url: "https://fujitafinancial.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=female&age=45&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_yumi_fujita.photo.attach(io: file, filename: 'yumi_fujita.png', content_type: 'image/png')
+
+sleep(1)
+min = 35.705924
+max = 35.718641
+min2 = 139.784154
+max2 = 139.793281
+personal_finance_planning_yumi = Service.create!(
+  title: "Yumi's Personal Finance & Estate Planning",
+  price: "35000 per session",
+  description: "Empower your financial future in Japan with comprehensive personal finance and estate planning. Tailored to expatriates, my service ensures your financial security, from investment strategies to estate management, all catered to your unique needs.",
+  schedule: "By appointment, Monday to Friday, 9 AM to 6 PM",
+  user: professional_yumi_fujita,
+  category: "Personal Finance, Estate Planning, Expatriate Services",
+  address: "4 Chome-6-1 Chuo, Chuo City, Tokyo 279-0002",
+  latitude: rand(min..max),
+  longitude: rand(min2..max2)
+)
+personal_finance_planning_yumi_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709789942/profinder/istockphoto-1201563792-612x612_aljqhd.jpg"
+personal_finance_planning_yumi_file = URI.open(personal_finance_planning_yumi_url)
+personal_finance_planning_yumi.photo.attach(
+  io: personal_finance_planning_yumi_file,
+  filename: "personal_finance_planning_yumi.jpg",
+  content_type: "image/jpeg"
+)
+
+review_jane_doe_yumi_finance = Review.create!(
+  rating: 3,
+  comment: "Yumi Fujita's expertise in personal finance and estate planning has been incredibly valuable to me and my family. Her personalized approach and understanding of the expatriate financial landscape in Japan have provided us with peace of mind and a clear path to financial security. Yumi's fluent English and comprehensive advice make her services highly recommendable to any expat seeking financial planning assistance.",
+  eng_rating: 3,
+  user: user_jane_doe,
+  service: personal_finance_planning_yumi
+)
+
+professional_kenji_sato = User.create!(
+  username: "KenjiSato",
+  email: "kenjisato@example.com",
+  password: "123456",
+  phonenumber: "03-6688-7744",
+  linkedin_profile: "https://www.linkedin.com/in/kenjisato",
+  bio: "Skilled in investment management and financial advisory for the expatriate community in Japan. My goal is to navigate you through the complexities of investing and financial planning in a foreign country.",
+  contact_email: "kenji@sato-investments.com",
+  website_url: "https://sato-investments.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=50&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_kenji_sato.photo.attach(io: file, filename: 'kenji_sato.png', content_type: 'image/png')
+
+sleep(1)
+min = 35.68262
+max = 35.76914
+min2 = 139.784154
+max2 = 139.793281
+investment_management_kenji = Service.create!(
+  title: "Kenji's Investment Management Solutions",
+  price: "30000 per session",
+  description: "Offering tailored investment management solutions for expatriates in Japan. Whether you're new to investing or looking to diversify your portfolio, I provide the guidance needed to make informed decisions.",
+  schedule: "By appointment, Monday to Friday, 9 AM to 5 PM",
+  user: professional_kenji_sato,
+  category: "Investment Management, Financial Advisory, Expatriate Finance",
+  address: "2 Chome-17-8 Chuo, Chuo City, Tokyo 131-0045",
+  latitude: rand(min..max),
+  longitude: rand(min2..max2)
+)
+personal_finance_planning_kenji_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709790137/profinder/istockphoto-950597484-612x612_ins8tn.jpg"
+personal_finance_planning_kenji_file = URI.open(personal_finance_planning_kenji_url)
+investment_management_kenji.photo.attach(
+  io: personal_finance_planning_kenji_file,
+  filename: "investment_management_kenji.jpg",
+  content_type: "image/jpeg"
+)
+
+review_jane_doe_kenji_finance = Review.create!(
+  rating: 3,
+  comment: "Attended Kenji's investment management session hoping for deep insights into Japan's market. While Kenji shared valuable information, the session didn't delve as deeply into advanced strategies as I had hoped. Additionally, the language barrier slightly affected the flow of information; his English was serviceable but not fluent. It was an alright experience, probably more suited to those new to the investment scene.",
+  eng_rating: 3,
+  user: user_jane_doe,
+  service: investment_management_kenji
+)
+
+professional_takumi_watanabe = User.create!(
+  username: "TakumiWatanabe",
+  email: "takumiwatanabe@example.com",
+  password: "123456",
+  phonenumber: "03-4489-7766",
+  linkedin_profile: "https://www.linkedin.com/in/takumiwatanabe",
+  bio: "A seasoned financial planner with over 20 years of experience, I specialize in helping expatriates manage their finances in Japan. My expertise includes tax optimization, retirement planning, and investment strategies tailored to the unique challenges faced by foreigners.",
+  contact_email: "takumi@watanabefinancial.com",
+  website_url: "https://watanabefinancial.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=50&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_takumi_watanabe.photo.attach(io: file, filename: 'takumi_watanabe.png', content_type: 'image/png')
+
+sleep(1)
+min = 35.705924
+max = 35.718641
+min2 = 139.784154
+max2 = 139.793281
+expat_financial_planning_takumi = Service.create!(
+  title: "Takumi's Expat Finance Planning Service",
+  price: "30000 per session",
+  description: "I offer expert financial planning services designed for expatriates living in Japan, covering everything from tax optimization to investment advice. My approach is personalized, ensuring you make the most out of your finances while abroad.",
+  schedule: "Weekdays, 9 AM to 5 PM",
+  user: professional_takumi_watanabe,
+  category: "Financial Planning, Tax Optimization, Investment Advice",
+  address: "1 Chome-4-5 Taito, Taito City, Tokyo 135-0016",
+  latitude: rand(min..max),
+  longitude: rand(min2..max2)
+)
+expat_financial_planning_takumi_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709790872/profinder/istockphoto-1450340570-612x612_qjkp7j.jpg"
+expat_financial_planning_takumi_file = URI.open(expat_financial_planning_takumi_url)
+expat_financial_planning_takumi.photo.attach(
+  io: expat_financial_planning_takumi_file,
+  filename: "expat_financial_planning_takumi.jpg",
+  content_type: "image/jpeg"
+)
+
+review_jane_doe_takumi_finance = Review.create!(
+  rating: 3,
+  comment: "Takumi's advice was comprehensive, covering all the basics of expat financial planning. While the session provided a good starting point, I found it somewhat generic, lacking in tailored strategies that I was hoping for. Additionally, while Takumi's English is good, there were moments where clearer communication could have enhanced the experience.",
+  eng_rating: 3,
+  user: user_jane_doe,
+  service: expat_financial_planning_takumi
+)
+
+professional_emi_kobayashi = User.create!(
+  username: "EmiKobayashi",
+  email: "emikobayashi@example.com",
+  password: "123456",
+  phonenumber: "03-5577-3344",
+  linkedin_profile: "https://www.linkedin.com/in/emikobayashi",
+  bio: "With a decade of experience in wealth management and expatriate financial services, I'm committed to helping foreign residents in Japan navigate their financial landscape. My services are designed to offer comprehensive solutions for saving, investing, and financial planning in a foreign context.",
+  contact_email: "emi@kobayashifinancial.com",
+  website_url: "https://kobayashifinancial.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=female&age=40&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_emi_kobayashi.photo.attach(io: file, filename: 'emi_kobayashi.png', content_type: 'image/png')
+
+sleep(1)
+wealth_management_emi = Service.create!(
+  title: "Emi's Wealth Management for Expatriates",
+  price: "28000 per session",
+  description: "Tailored wealth management services designed for expatriates in Japan. I provide personalized investment advice, financial planning, and tax strategy to help you secure and grow your wealth abroad.",
+  schedule: "By appointment, Monday to Friday, 9 AM to 6 PM",
+  user: professional_emi_kobayashi,
+  category: "Wealth Management, Financial Planning, Expatriate Finance",
+  address: "3 Chome-2-11 Minato, Tokyo 108-0075"
+)
+emi_wealth_management_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709790067/profinder/istockphoto-1335507515-612x612_n24x6f.jpg"
+emi_wealth_management_file = URI.open(emi_wealth_management_url)
+wealth_management_emi.photo.attach(
+  io: emi_wealth_management_file,
+  filename: "wealth_management_emi.jpg",
+  content_type: "image/jpeg"
+)
+
+review_dan_chin_emi_finance = Review.create!(
+  rating: 3,
+  comment: "Emi's sessions were insightful to a degree, providing a solid overview of wealth management for someone like me living abroad. However, I was expecting more customized advice tailored to my specific situation. While Emi was clearly knowledgeable, the sessions could benefit from a deeper dive into personal finance strategies for expatriates.",
+  eng_rating: 3,
+  user: user_dan_chin,
+  service: wealth_management_emi
+)
+
+professional_haruto_nagase = User.create!(
+  username: "HarutoNagase",
+  email: "harutonagase@example.com",
+  password: "123456",
+  phonenumber: "03-6689-1010",
+  linkedin_profile: "https://www.linkedin.com/in/harutonagase",
+  bio: "Specializing in retirement planning and wealth management for expatriates in Japan, I combine local expertise with a global perspective to help you navigate the complexities of financial planning abroad.",
+  contact_email: "haruto@nagasefinance.com",
+  website_url: "https://nagasefinance.com"
+)
+url = "https://this-person-does-not-exist.com/new?gender=male&age=45&etnic=asian"
+json = URI.open(url).string
+src = JSON.parse(json)['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+file = URI.open(photo_url)
+professional_haruto_nagase.photo.attach(io: file, filename: 'haruto_nagase.png', content_type: 'image/png')
+
+sleep(1)
+min = 35.705924
+max = 35.718641
+min2 = 139.784154
+max2 = 139.793281
+expatriate_retirement_planning_haruto = Service.create!(
+  title: "Haruto's Retirement Planning for Expatriates",
+  price: "32000 per session",
+  description: "Expert retirement planning services tailored for expatriates living in Japan. From investments to savings, I ensure you're on the right track for a comfortable retirement abroad.",
+  schedule: "By appointment, Monday to Friday, 10 AM to 7 PM",
+  user: professional_haruto_nagase,
+  category: "Retirement Planning, Wealth Management, Expatriate Finance",
+  address: "3 Chome-4-1 Taito, Taito City, Tokyo 135-0016",
+  latitude: rand(min..max),
+  longitude: rand(min2..max2)
+)
+
+expatriate_retirement_planning_haruto_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709791268/profinder/istockphoto-486547364-612x612_oxefg6.jpg"
+expatriate_retirement_planning_haruto_file = URI.open(expatriate_retirement_planning_haruto_url)
+expatriate_retirement_planning_haruto.photo.attach(
+  io: expatriate_retirement_planning_haruto_file,
+  filename: "expatriate_retirement_planning_haruto.jpg",
+  content_type: "image/jpeg"
+)
+
+review_jane_doe_haruto_finance = Review.create!(
+  rating: 4,
+  comment: "Haruto's retirement planning session offered a lot of valuable insights, especially in terms of long-term investment strategies tailored for expatriates in Japan. His understanding of the local financial environment, combined with a practical approach, made the advice very applicable. Though the session was highly informative, a bit more customization to align with my specific financial goals would have made it perfect.",
+  eng_rating: 4,
+  user: user_jane_doe,
+  service: expatriate_retirement_planning_haruto
+)
+
+
 professional_kazuo_tanaka = User.create!(
   username: "KazuoTanaka",
   email: "kazuotanaka@example.com",
@@ -1658,7 +1991,11 @@ booking_yoshio_kaneko_haruki_matsuda = Booking.create!(
 )
 
 puts "Making the final Demo Day seeds....Almost Done!"
-
+sleep(1)
+min = 35.71722
+max =  35.74280
+min2 = 139.70200
+max2 = 139.72484
 professional_masaki_kato = User.create!(
   username: "MasakiKato",
   email: "masakikato@example.com",
@@ -1702,337 +2039,15 @@ review_jane_doe_kato_finance = Review.create!(
   service: kato_wealth_management
 )
 
-professional_ayumi_takahashi = User.create!(
-  username: "AyumiTakahashi",
-  email: "ayumitakahashi@example.com",
-  password: "123456",
-  phonenumber: "03-3456-7890",
-  linkedin_profile: "https://www.linkedin.com/in/ayumitakahashi",
-  bio: "Certified tax consultant with a focus on providing comprehensive tax planning and filing services for expatriates living in Japan. Expertise in international tax law to optimize your tax position.",
-  contact_email: "ayumi@takahashitax.com",
-  website_url: "https://takahashitax.com"
-)
-url = "https://this-person-does-not-exist.com/new?gender=female&age=40&etnic=asian"
-json = URI.open(url).string
-src = JSON.parse(json)['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-file = URI.open(photo_url)
-professional_ayumi_takahashi.photo.attach(io: file, filename: 'ayumi_takahashi.png', content_type: 'image/png')
 
-sleep(1)
-min = 35.71722
-max =  35.74280
-min2 = 139.70200
-max2 = 139.72484
-expatriate_tax_consultation_ayumi = Service.create!(
-  title: "Ayumi's Expatriate Tax Consultation",
-  price: "20000 per session",
-  description: "Navigate Japan's tax landscape with ease. I offer personalized tax consultation and filing services tailored to the unique needs of expatriates. Ensure compliance and optimize your tax situation with expert advice.",
-  schedule: "Weekdays, 9 AM to 5 PM",
-  user: professional_ayumi_takahashi,
-  category: "Expatriate Finance, Tax Consultation, International Tax Law",
-  address: "3 Chome-12-9 Toshima, Toshima City, Tokyo 132-0013",
-  latitude: rand(min..max),
-  longitude: rand(min2..max2)
-)
-expatriate_tax_consultation_ayumi_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709789414/profinder/istockphoto-1416399964-612x612_esd47o.jpg"
-expatriate_tax_consultation_ayumi_file = URI.open(expatriate_tax_consultation_ayumi_url)
-expatriate_tax_consultation_ayumi.photo.attach(
-  io: expatriate_tax_consultation_ayumi_file,
-  filename: "expatriate_tax_consultation_ayumi.jpg",
-  content_type: "image/jpeg"
-)
 
-review_dan_chin_ayumi_finance = Review.create!(
-  rating: 3,
-  comment: "Ayumi's tax consultation service fit what I was looking for. Her deep understanding of both Japanese and international tax laws made my tax filing process stress-free. She provided clear guidance in English, which was crucial for me as an expat. Her professionalism and thorough approach to tax planning have saved me a significant amount in taxes. Highly recommended for any expatriates struggling with their tax situation in Japan.",
-  eng_rating: 5,
-  user: user_dan_chin,
-  service: expatriate_tax_consultation_ayumi
-)
 
-professional_hiroki_nakamura = User.create!(
-  username: "HirokiNakamura",
-  email: "hirokinakamura@example.com",
-  password: "123456",
-  phonenumber: "03-6677-8899",
-  linkedin_profile: "https://www.linkedin.com/in/hirokinakamura",
-  bio: "Innovative financial analyst with expertise in market trends, investment opportunities, and economic strategies tailored for the expatriate community in Japan. I’m here to help you make informed decisions that align with your financial goals.",
-  contact_email: "hiroki@nakamurafinancial.com",
-  website_url: "https://nakamurafinancial.com"
-)
-url = "https://this-person-does-not-exist.com/new?gender=male&age=35&etnic=asian"
-json = URI.open(url).string
-src = JSON.parse(json)['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-file = URI.open(photo_url)
-professional_hiroki_nakamura.photo.attach(io: file, filename: 'hiroki_nakamura.png', content_type: 'image/png')
 
-sleep(1)
-market_insight_consultation_hiroki = Service.create!(
-  title: "Hiroki's Market Insight and Finance Consultation",
-  price: "25000 per session",
-  description: "Gain unparalleled insights into Japan's financial market with Hiroki Nakamura. From identifying robust investment opportunities to understanding the latest market trends, my service is designed to equip expatriates with the knowledge to thrive financially in Japan.",
-  schedule: "Weekdays, 10 AM to 6 PM",
-  user: professional_hiroki_nakamura,
-  category: "Market Analysis, Finance Consulting, Expatriate Advising",
-  address: "5 Chome-11-2 Minato, Tokyo 108-0075"
-)
-market_insight_consultation_hiroki_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709789814/profinder/istockphoto-516011106-612x612_dgx2dn.jpg"
-market_insight_consultation_hiroki_file = URI.open(market_insight_consultation_hiroki_url)
-market_insight_consultation_hiroki.photo.attach(
-  io: market_insight_consultation_hiroki_file,
-  filename: "market_insight_consultation_hiroki.jpg",
-  content_type: "image/jpeg"
-)
 
-review_dan_chin_hiroki_finance = Review.create!(
-  rating: 5,
-  comment: "Hiroki's consultation opened my eyes to several lucrative investment avenues within Japan's unique market environment. His detailed analysis and understanding of economic indicators have been invaluable. Moreover, his ability to explain complex financial concepts in English has made planning my investments much more accessible. A must-have service for any expat serious about investing in Japan.",
-  eng_rating: 5,
-  user: user_dan_chin,
-  service: market_insight_consultation_hiroki
-)
 
-professional_yumi_fujita = User.create!(
-  username: "YumiFujita",
-  email: "yumifujita@example.com",
-  password: "123456",
-  phonenumber: "03-5597-8844",
-  linkedin_profile: "https://www.linkedin.com/in/yumifujita",
-  bio: "Expert in personal financial planning and estate management with a passion for helping expatriates in Japan secure their financial future. With over 15 years of experience, I offer personalized advice to ensure your wealth grows and is protected.",
-  contact_email: "contact@fujitafinancial.com",
-  website_url: "https://fujitafinancial.com"
-)
-url = "https://this-person-does-not-exist.com/new?gender=female&age=45&etnic=asian"
-json = URI.open(url).string
-src = JSON.parse(json)['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-file = URI.open(photo_url)
-professional_yumi_fujita.photo.attach(io: file, filename: 'yumi_fujita.png', content_type: 'image/png')
 
-sleep(1)
-min = 35.705924
-max = 35.718641
-min2 = 139.784154
-max2 = 139.793281
-personal_finance_planning_yumi = Service.create!(
-  title: "Yumi's Personal Finance & Estate Planning",
-  price: "35000 per session",
-  description: "Empower your financial future in Japan with comprehensive personal finance and estate planning. Tailored to expatriates, my service ensures your financial security, from investment strategies to estate management, all catered to your unique needs.",
-  schedule: "By appointment, Monday to Friday, 9 AM to 6 PM",
-  user: professional_yumi_fujita,
-  category: "Personal Finance, Estate Planning, Expatriate Services",
-  address: "4 Chome-6-1 Chuo, Chuo City, Tokyo 279-0002",
-  latitude: rand(min..max),
-  longitude: rand(min2..max2)
-)
-personal_finance_planning_yumi_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709789942/profinder/istockphoto-1201563792-612x612_aljqhd.jpg"
-personal_finance_planning_yumi_file = URI.open(personal_finance_planning_yumi_url)
-personal_finance_planning_yumi.photo.attach(
-  io: personal_finance_planning_yumi_file,
-  filename: "personal_finance_planning_yumi.jpg",
-  content_type: "image/jpeg"
-)
 
-review_jane_doe_yumi_finance = Review.create!(
-  rating: 3,
-  comment: "Yumi Fujita's expertise in personal finance and estate planning has been incredibly valuable to me and my family. Her personalized approach and understanding of the expatriate financial landscape in Japan have provided us with peace of mind and a clear path to financial security. Yumi's fluent English and comprehensive advice make her services highly recommendable to any expat seeking financial planning assistance.",
-  eng_rating: 3,
-  user: user_jane_doe,
-  service: personal_finance_planning_yumi
-)
 
-professional_kenji_sato = User.create!(
-  username: "KenjiSato",
-  email: "kenjisato@example.com",
-  password: "123456",
-  phonenumber: "03-6688-7744",
-  linkedin_profile: "https://www.linkedin.com/in/kenjisato",
-  bio: "Skilled in investment management and financial advisory for the expatriate community in Japan. My goal is to navigate you through the complexities of investing and financial planning in a foreign country.",
-  contact_email: "kenji@sato-investments.com",
-  website_url: "https://sato-investments.com"
-)
-url = "https://this-person-does-not-exist.com/new?gender=male&age=50&etnic=asian"
-json = URI.open(url).string
-src = JSON.parse(json)['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-file = URI.open(photo_url)
-professional_kenji_sato.photo.attach(io: file, filename: 'kenji_sato.png', content_type: 'image/png')
-
-sleep(1)
-min = 35.68262
-max = 35.76914
-min2 = 139.784154
-max2 = 139.793281
-investment_management_kenji = Service.create!(
-  title: "Kenji's Investment Management Solutions",
-  price: "30000 per session",
-  description: "Offering tailored investment management solutions for expatriates in Japan. Whether you're new to investing or looking to diversify your portfolio, I provide the guidance needed to make informed decisions.",
-  schedule: "By appointment, Monday to Friday, 9 AM to 5 PM",
-  user: professional_kenji_sato,
-  category: "Investment Management, Financial Advisory, Expatriate Finance",
-  address: "2 Chome-17-8 Chuo, Chuo City, Tokyo 131-0045",
-  latitude: rand(min..max),
-  longitude: rand(min2..max2)
-)
-personal_finance_planning_kenji_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709790137/profinder/istockphoto-950597484-612x612_ins8tn.jpg"
-personal_finance_planning_kenji_file = URI.open(personal_finance_planning_kenji_url)
-investment_management_kenji.photo.attach(
-  io: personal_finance_planning_kenji_file,
-  filename: "investment_management_kenji.jpg",
-  content_type: "image/jpeg"
-)
-
-review_jane_doe_kenji_finance = Review.create!(
-  rating: 3,
-  comment: "Attended Kenji's investment management session hoping for deep insights into Japan's market. While Kenji shared valuable information, the session didn't delve as deeply into advanced strategies as I had hoped. Additionally, the language barrier slightly affected the flow of information; his English was serviceable but not fluent. It was an alright experience, probably more suited to those new to the investment scene.",
-  eng_rating: 3,
-  user: user_jane_doe,
-  service: investment_management_kenji
-)
-
-professional_takumi_watanabe = User.create!(
-  username: "TakumiWatanabe",
-  email: "takumiwatanabe@example.com",
-  password: "123456",
-  phonenumber: "03-4489-7766",
-  linkedin_profile: "https://www.linkedin.com/in/takumiwatanabe",
-  bio: "A seasoned financial planner with over 20 years of experience, I specialize in helping expatriates manage their finances in Japan. My expertise includes tax optimization, retirement planning, and investment strategies tailored to the unique challenges faced by foreigners.",
-  contact_email: "takumi@watanabefinancial.com",
-  website_url: "https://watanabefinancial.com"
-)
-url = "https://this-person-does-not-exist.com/new?gender=male&age=50&etnic=asian"
-json = URI.open(url).string
-src = JSON.parse(json)['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-file = URI.open(photo_url)
-professional_takumi_watanabe.photo.attach(io: file, filename: 'takumi_watanabe.png', content_type: 'image/png')
-
-sleep(1)
-min = 35.705924
-max = 35.718641
-min2 = 139.784154
-max2 = 139.793281
-expat_financial_planning_takumi = Service.create!(
-  title: "Takumi's Expat Finance Planning Service",
-  price: "30000 per session",
-  description: "I offer expert financial planning services designed for expatriates living in Japan, covering everything from tax optimization to investment advice. My approach is personalized, ensuring you make the most out of your finances while abroad.",
-  schedule: "Weekdays, 9 AM to 5 PM",
-  user: professional_takumi_watanabe,
-  category: "Financial Planning, Tax Optimization, Investment Advice",
-  address: "1 Chome-4-5 Taito, Taito City, Tokyo 135-0016",
-  latitude: rand(min..max),
-  longitude: rand(min2..max2)
-)
-expat_financial_planning_takumi_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709790872/profinder/istockphoto-1450340570-612x612_qjkp7j.jpg"
-expat_financial_planning_takumi_file = URI.open(expat_financial_planning_takumi_url)
-expat_financial_planning_takumi.photo.attach(
-  io: expat_financial_planning_takumi_file,
-  filename: "expat_financial_planning_takumi.jpg",
-  content_type: "image/jpeg"
-)
-
-review_jane_doe_takumi_finance = Review.create!(
-  rating: 3,
-  comment: "Takumi's advice was comprehensive, covering all the basics of expat financial planning. While the session provided a good starting point, I found it somewhat generic, lacking in tailored strategies that I was hoping for. Additionally, while Takumi's English is good, there were moments where clearer communication could have enhanced the experience.",
-  eng_rating: 3,
-  user: user_jane_doe,
-  service: expat_financial_planning_takumi
-)
-
-professional_emi_kobayashi = User.create!(
-  username: "EmiKobayashi",
-  email: "emikobayashi@example.com",
-  password: "123456",
-  phonenumber: "03-5577-3344",
-  linkedin_profile: "https://www.linkedin.com/in/emikobayashi",
-  bio: "With a decade of experience in wealth management and expatriate financial services, I'm committed to helping foreign residents in Japan navigate their financial landscape. My services are designed to offer comprehensive solutions for saving, investing, and financial planning in a foreign context.",
-  contact_email: "emi@kobayashifinancial.com",
-  website_url: "https://kobayashifinancial.com"
-)
-url = "https://this-person-does-not-exist.com/new?gender=female&age=40&etnic=asian"
-json = URI.open(url).string
-src = JSON.parse(json)['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-file = URI.open(photo_url)
-professional_emi_kobayashi.photo.attach(io: file, filename: 'emi_kobayashi.png', content_type: 'image/png')
-
-sleep(1)
-wealth_management_emi = Service.create!(
-  title: "Emi's Wealth Management for Expatriates",
-  price: "28000 per session",
-  description: "Tailored wealth management services designed for expatriates in Japan. I provide personalized investment advice, financial planning, and tax strategy to help you secure and grow your wealth abroad.",
-  schedule: "By appointment, Monday to Friday, 9 AM to 6 PM",
-  user: professional_emi_kobayashi,
-  category: "Wealth Management, Financial Planning, Expatriate Finance",
-  address: "3 Chome-2-11 Minato, Tokyo 108-0075"
-)
-emi_wealth_management_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709790067/profinder/istockphoto-1335507515-612x612_n24x6f.jpg"
-emi_wealth_management_file = URI.open(emi_wealth_management_url)
-wealth_management_emi.photo.attach(
-  io: emi_wealth_management_file,
-  filename: "wealth_management_emi.jpg",
-  content_type: "image/jpeg"
-)
-
-review_dan_chin_emi_finance = Review.create!(
-  rating: 3,
-  comment: "Emi's sessions were insightful to a degree, providing a solid overview of wealth management for someone like me living abroad. However, I was expecting more customized advice tailored to my specific situation. While Emi was clearly knowledgeable, the sessions could benefit from a deeper dive into personal finance strategies for expatriates.",
-  eng_rating: 3,
-  user: user_dan_chin,
-  service: wealth_management_emi
-)
-
-professional_haruto_nagase = User.create!(
-  username: "HarutoNagase",
-  email: "harutonagase@example.com",
-  password: "123456",
-  phonenumber: "03-6689-1010",
-  linkedin_profile: "https://www.linkedin.com/in/harutonagase",
-  bio: "Specializing in retirement planning and wealth management for expatriates in Japan, I combine local expertise with a global perspective to help you navigate the complexities of financial planning abroad.",
-  contact_email: "haruto@nagasefinance.com",
-  website_url: "https://nagasefinance.com"
-)
-url = "https://this-person-does-not-exist.com/new?gender=male&age=45&etnic=asian"
-json = URI.open(url).string
-src = JSON.parse(json)['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-file = URI.open(photo_url)
-professional_haruto_nagase.photo.attach(io: file, filename: 'haruto_nagase.png', content_type: 'image/png')
-
-sleep(1)
-min = 35.705924
-max = 35.718641
-min2 = 139.784154
-max2 = 139.793281
-expatriate_retirement_planning_haruto = Service.create!(
-  title: "Haruto's Retirement Planning for Expatriates",
-  price: "32000 per session",
-  description: "Expert retirement planning services tailored for expatriates living in Japan. From investments to savings, I ensure you're on the right track for a comfortable retirement abroad.",
-  schedule: "By appointment, Monday to Friday, 10 AM to 7 PM",
-  user: professional_haruto_nagase,
-  category: "Retirement Planning, Wealth Management, Expatriate Finance",
-  address: "3 Chome-4-1 Taito, Taito City, Tokyo 135-0016",
-  latitude: rand(min..max),
-  longitude: rand(min2..max2)
-)
-
-expatriate_retirement_planning_haruto_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1709791268/profinder/istockphoto-486547364-612x612_oxefg6.jpg"
-expatriate_retirement_planning_haruto_file = URI.open(expatriate_retirement_planning_haruto_url)
-expatriate_retirement_planning_haruto.photo.attach(
-  io: expatriate_retirement_planning_haruto_file,
-  filename: "expatriate_retirement_planning_haruto.jpg",
-  content_type: "image/jpeg"
-)
-
-review_jane_doe_haruto_finance = Review.create!(
-  rating: 4,
-  comment: "Haruto's retirement planning session offered a lot of valuable insights, especially in terms of long-term investment strategies tailored for expatriates in Japan. His understanding of the local financial environment, combined with a practical approach, made the advice very applicable. Though the session was highly informative, a bit more customization to align with my specific financial goals would have made it perfect.",
-  eng_rating: 4,
-  user: user_jane_doe,
-  service: expatriate_retirement_planning_haruto
-)
 
 
 # OLD SEEDS
