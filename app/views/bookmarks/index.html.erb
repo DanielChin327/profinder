@@ -7,7 +7,7 @@
           <%= cl_image_tag(bookmark.service.photo.key, class: "bookmark-product-image") %>
         </div>
         <div class="bookmark-product-text">
-          <%= link_to(bookmark.service.title, service_path(bookmark.service), class: "truncate btn btn-link text-decoration-none") %>
+          <%= link_to(bookmark.service.title, service_path(bookmark.service), class: "truncate btn btn-link text-decoration-none d-block") %>
           <div class="bookmark-product-infos">
             <p><%= bookmark.service.user.username %></p>
             <p><%= bookmark.service.user.email %></p>

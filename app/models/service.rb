@@ -11,5 +11,8 @@ class Service < ApplicationRecord
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
   # validates :category, presence: true
 
-  paginates_per 10
+  paginates_per 5
+  def average_rating
+    reviews.average(:rating) || 0
+  end
 end

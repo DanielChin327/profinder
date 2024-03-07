@@ -47,15 +47,16 @@ a.top-card-button:active {
   transition: all 0.025s 0s ease-out;
 }
 
-div.cards {
+div.top-cards {
   margin: 80px auto;
   max-width: 960px;
   text-align: center;
+  display: flex;
 }
 
-div.card {
+div.top-card {
   background: $white;
-  display: inline-block;
+  display: block;
   margin: 8px;
   max-width: 300px;
   perspective: 1000;
@@ -66,16 +67,18 @@ div.card {
   z-index: 1;
 
   img {
-    max-width: 300px;
+    max-height: 200px;
+    object-fit: cover;
   }
 
-  .card__image-holder {
-    background: rgba(0,0,0,0.1);
-    height: 0;
-    padding-bottom: 75%;
+  .top-card-holder {
+    // background: rgba(0,0,0,0.1);
+    // height: 0;
+    // padding-bottom: 75%;
+    overflow: hidden;
   }
 
-  div.card-title {
+  div.top-card-title {
     background: $white;
     padding: 6px 15px 10px;
     position: relative;
@@ -109,36 +112,42 @@ div.card {
         transform: rotate(-45deg);
       }
     }
-
-    h2 {
+    h2{
       font-size: 24px;
-      font-weight: 700;
+      font-weight: bold;
+      margin: 0;
+      color: #6659ff;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
       letter-spacing: -0.05em;
       margin: 0;
       padding: 0;
 
+
       small {
         display: block;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 16px;
         letter-spacing: -0.025em;
       }
     }
   }
 
-  div.card-description {
+  div.top-card-description {
     padding: 0 15px 10px;
     position: relative;
     font-size: 14px;
   }
 
-  div.card-actions {
+  div.top-card-actions {
   	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
     padding: 10px 15px 20px;
     text-align: center;
   }
 
-  div.card-flap {
+  div.top-card-flap {
     background: darken($white,15);
     position: absolute;
     width: 100%;
@@ -156,8 +165,8 @@ div.card {
 
 }
 
-div.cards.showing {
-  div.card {
+div.top-cards.showing {
+  div.top-card {
     cursor: pointer;
     opacity: 0.6;
     transform: scale(0.88);
@@ -165,18 +174,18 @@ div.cards.showing {
 }
 
 .no-touch  div.cards.showing {
-  div.card:hover {
+  div.top-card:hover {
     opacity: 0.94;
     transform: scale(0.92);
   }
 }
 
-div.card.show {
+div.top-card.show {
   opacity: 1 !important;
   transform: scale(1) !important;
   z-index: 900;
 
-  div.card-title {
+  div.top-card-title {
     a.toggle-info {
       background: $salmon !important;
       span {
@@ -190,7 +199,7 @@ div.card.show {
       }
     }
   }
-  div.card-flap {
+  div.top-card-flap {
     background: $white;
     transform: rotateX(0deg);
   }

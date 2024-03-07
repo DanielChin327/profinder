@@ -28,7 +28,8 @@
   overflow: hidden;
   background: transparent;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr 10%;
   align-items: center;
   border-radius: 10px;
 }
@@ -54,7 +55,6 @@
 
 .booking-product .booking-product-infos {
   padding: 16px;
-  width: 65%;
 }
 
 .booking-block{

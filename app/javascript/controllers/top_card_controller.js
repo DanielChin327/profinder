@@ -10,6 +10,7 @@ export default class extends Controller {
 
   show(e) {
     e.preventDefault();
+    console.log(e)
     if (e.currentTarget.classList.contains("show")) {
       this.containerTarget.classList.remove("showing")
       e.currentTarget.classList.remove("show")

@@ -36,7 +36,11 @@ user_Yoshio_Kaneko = User.create!(
   bio: "Working on becoming a software developer.",
   contact_email: "kanekoyoshio007@gmail.com",
   website_url: "n/a",
+  address: "1 Chome-2-3 Shibuya, Tokyo"
 )
+yoshio_url = "https://res.cloudinary.com/diidd6j2o/image/upload/v1709788914/yoshio_s_icon_fminsx.png"
+file = URI.open(yoshio_url)
+user_Yoshio_Kaneko.photo.attach(io: file, filename: 'yoshio_s_icon_fminsx.png', content_type: 'image/png')
 user_jane_doe = User.create!(
   username: "JaneDoe",
   email: "janedoe@example.com",

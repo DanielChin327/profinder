@@ -1,5 +1,8 @@
 
-<div class="d-flex justify-content-center search-box">
+<div class="d-flex justify-content-left gap-5 search-box">
+<span class="mx-3"> Current User's location <i class="fa-solid fa-location-dot" style="color: #6659ff;"></i>
+<br>
+<%= current_user.address if current_user%></span>
   <div class="col-lg-8">
     <%= form_with url: services_path, method: :get, class: "d-flex justify-content-center py-2" do %>
 
