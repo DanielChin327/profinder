@@ -21,6 +21,7 @@ user_dan_chin = User.create!(
   bio: "Working on becoming a software developer.",
   contact_email: "danchin327@gmail.com",
   website_url: "n/a",
+  address: "1 Chome-2-3 Shibuya, Tokyo"
 )
 url = "https://this-person-does-not-exist.com/new?gender=male&age=30&etnic=asian"
 json = URI.open(url).string
@@ -1190,7 +1191,7 @@ haruka_expatriate_finance_planning.photo.attach(
 
 sleep(1)
 house_moving_service_haruki_matsuda = Service.create!(
-  title: "House Moving Services",
+  title: "Haruki's House Moving Services",
   price: "Contact for quote",
   description: "Make your next move hassle-free with our professional moving services. From packing to transportation, we ensure your belongings are safely moved to your new home.",
   schedule: "Available by appointment",
