@@ -1,8 +1,6 @@
-
 <div class="d-flex justify-content-center search-box">
   <div class="col-lg-8">
     <%= form_with url: services_path, method: :get, class: "d-flex justify-content-center py-2" do %>
-
       <%= text_field_tag :query,
             params[:query],
             class: "form-control w-50 input-field",
@@ -13,12 +11,23 @@
         <%= link_to "Show All", services_path, class: "button-light" %>
       </div>
     <% end %>
-  </div>
-</div>
-
-<div class="service-index-info">
-
-    <%= render "card" %>
-
+    <div class="fade-container">
+      <div class="category-pills d-flex" >
+        <% #["Finance", "Moving", "Accounting", "Consulting"].each do |category| %>
+          <%@services.pluck(:category).map {|categories| categories.split(", ")}.flatten.uniq.first(15).each do |category|%>
+            <%#= link_to services_path, class: 'card-product-link' do %>
+              <%= form_with url: services_path, method: :get do %>
+                <%= hidden_field_tag :query, category %>
+                <%= submit_tag category, name: "", class: "tag" %>
+                <!-- <span class="tag"><%= category %></span> -->
+              <% end %>
+              <%# end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-index-info">
+      <%= render "card" %>
       <%= render "services/map_index", marker: @marker %>
-</div>
+    </div>
