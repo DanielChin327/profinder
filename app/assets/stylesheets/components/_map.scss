@@ -28,7 +28,8 @@ z-index: 1
 .mapboxgl-popup-close-button {
   transform: scale(3);
   top: 8px !important;
-  right: 8px !important
+  right: 8px !important;
+  z-index: 999;
 }
 
 
