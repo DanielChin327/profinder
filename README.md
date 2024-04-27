@@ -52,8 +52,8 @@ Contact
 Your Name - your.email@example.com
 
 Acknowledgements
-Le Wagon Staff and TA
-Hiroshi Nagao [https://github.com/hiroshiknagao]
-Yoshio Kaneko [https://github.com/Yoshicrabmiso]   
+Le Wagon Staff and TA,
+Hiroshi Nagao [https://github.com/hiroshiknagao],
+Yoshio Kaneko [https://github.com/Yoshicrabmiso],   
 and myself
 
